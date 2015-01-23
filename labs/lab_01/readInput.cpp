@@ -3,7 +3,7 @@
 
 Author: Eric Van Wyk
 
-Modifications for Lab 01 by:   <add your name here>
+Modifications for Lab 01 by:   Dennis Ehrhardt
 */
 
 #include <stdio.h>
@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
     // Verify that a file name is provided and that the file exists.
     // Use some new C++ stream features.
     if (argc <= 1) {
-        printf ("Usage: readInput <filename>\n") ;
+        printf ("Usage: readInput <filename>\n") ; //Why is the semicolon spaced? :(
         return 1 ;
     }
 
