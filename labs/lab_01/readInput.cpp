@@ -48,5 +48,13 @@ int main(int argc, char** argv) {
     }
     buffer[index] = '\0' ;
 
+	int scount = 0;
+	
+	while(--index >= 0)
+	{
+		if(buffer[index] == 's')
+		scount++;
+	}
+	printf("Number of s: %d\n", scount);
     return 0 ;
 }
