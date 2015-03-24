@@ -37,7 +37,8 @@ public:
 		typeOf = "decoy";
 		name = n;
 	}
-
+	// Might still want a fly() to maintain consistency across subclasses
+	// void fly() { std::cout << "I don't fly.\n"; }
 	void quack() { std::cout << "I quack.\n"; }
 };
 
