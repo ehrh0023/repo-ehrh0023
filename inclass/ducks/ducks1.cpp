@@ -1,5 +1,7 @@
 #include "duck1.h"
 
+// There are no answers to the questions ?? (amy)
+
 using std::string;
 
 class Mallard : public DuckClass
