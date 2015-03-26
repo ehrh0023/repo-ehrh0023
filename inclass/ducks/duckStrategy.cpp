@@ -9,125 +9,154 @@ using namespace std;
 //-----------------------------------------------
 //   QUACKING
 
-class QuackBehavior {
+class QuackBehavior
+{
 protected:
-  double volume;
+	double volume;
 public:
-  QuackBehavior() : volume(DB_DEFAULT) {}
-  void quack() { cout << "Generic Quack at " << volume << " decibels" << endl; }
+	QuackBehavior() : volume(DB_DEFAULT) {}
+	virtual void quack() { cout << "Generic Quack at " << volume << " decibels" << endl; }
 };
 
-class Quack : public QuackBehavior {
+class Quack : public QuackBehavior
+{
 public:
-  Quack() {}
-  void quack() { cout << "Quack at " << volume << " decibels" << endl; }
+	Quack() {}
+	void quack() { cout << "Quack at " << volume << " decibels" << endl; }
 };
 
-class Mute : public QuackBehavior {
+class Mute : public QuackBehavior
+{
 public:
-  Mute() { volume = 0; }
-  void quack() { cout << "Cannot talk." << endl; }
+	Mute() { volume = 0; }
+	void quack() { cout << "Can not talk." << endl; }
 };
 
-class Squeak : public QuackBehavior {
+class Squeak : public QuackBehavior
+{
 public:
-  Squeak() {}
-  Squeak(int d) { volume = d; }
-  void quack() { cout << "Squeak at " << volume << " decibels." << endl; }
+	Squeak() {}
+	Squeak(int d) { volume = d; }
+	void quack() { cout << "Squeak at " << volume << " decibels." << endl; }
 };
 
-class Honk : public QuackBehavior {
-  // This is a confused swan that honks instead of quacks. Fill this in. <<<<<<<<<<<<<<<<
+class Honk : public QuackBehavior
+{
+	Honk() {}
+	Honk(int d) { volume = d; }
+	void quack() { cout << "Honk at " << volume << " decibels." << endl; }
 };
 
 
 //-----------------------------------------------
 //   FLYING
 
-class FlyBehavior {
+class FlyBehavior
+{
 protected:
-  double milesPerHour;
+	double milesPerHour;
 public:
-  FlyBehavior() : milesPerHour(MPH_DEFAULT) {}
-  void fly() { cout << "Generic Flying at " << milesPerHour << " mph." << endl; }
-};
-  
-class FlyWithWings : public FlyBehavior {
-public:
-  FlyWithWings() {}
-  void fly() { cout << "Fly at speed of " << milesPerHour << " mph." << endl; }
+	FlyBehavior() : milesPerHour(MPH_DEFAULT) {}
+	virtual void fly() { cout << "Generic Flying at " << milesPerHour << " mph." << endl; }
 };
 
-class NoFly : public FlyBehavior {
+class FlyWithWings : public FlyBehavior
+{
 public:
-  // cannot fly <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Fill this in;
+	FlyWithWings() {}
+	void fly() { cout << "Fly at speed of " << milesPerHour << " mph." << endl; }
 };
 
-class FlyWithRocket : public FlyBehavior {
-  // Can fly REALLY fast - don't use the default speed <<<<<<<<<< Fill this in;
+class NoFly : public FlyBehavior
+{
+public:
+	NoFly() {}
+	void fly() { cout << "Can not fly" << endl; }
+};
+
+class FlyWithRocket : public FlyBehavior
+{
+	FlyWithRocket() { milesPerHour = MPH_DEFAULT * 3; }
+	void fly() { cout << "Fly at speed of " << milesPerHour << " mph." << endl; }
 };
 
 //----------------------------------------------
 //  THE DUCKS
 
-class Duck {
+class Duck
+{
 protected:
-  FlyBehavior flyBehavior;
-  QuackBehavior quackBehavior;
+	FlyBehavior* flyBehavior;
+	QuackBehavior* quackBehavior;
 public:
-  Duck() {
-    flyBehavior = FlyWithWings();
-    quackBehavior = Quack();
-  }
-  void display() { cout << "I am a duck." << endl; }
-  void fly() { flyBehavior.fly(); }
-  void quack() { quackBehavior.quack(); }
+	Duck()
+	{
+		flyBehavior = new FlyWithWings();
+		quackBehavior = new Quack();
+	}
+	virtual void display() { cout << "I am a duck." << endl; }
+	virtual void fly() { flyBehavior->fly(); }
+	virtual void quack() { quackBehavior->quack(); }
+
+
+	virtual ~Duck()
+	{
+		delete flyBehavior;
+		delete quackBehavior;
+	}
 };
 
-class Mallard : public Duck {
+class Mallard : public Duck
+{
 public:
-  Mallard() {
-    flyBehavior = FlyWithWings();
-    quackBehavior = Quack();
-  }
-  void display() { cout << "I am a Mallard." << endl; }
-  void quack() { quackBehavior.quack(); }
-  void fly() { flyBehavior.fly(); }
+	Mallard()
+	{
+		delete flyBehavior;
+		delete quackBehavior;
+
+		flyBehavior = new FlyWithWings();
+		quackBehavior = new Quack();
+	}
+	void display() { cout << "I am a Mallard." << endl; }
 };
 
-class RubberDuck : public Duck {
+class RubberDuck : public Duck
+{
 public:
-  RubberDuck() { 
-    flyBehavior = NoFly();
-    quackBehavior = Squeak(2);
-  }
-  void display() { cout << "I am a Rubber Duck." << endl; }
-  void quack() { quackBehavior.quack(); }
-  void fly() { flyBehavior.fly(); }
+	RubberDuck()
+	{
+		delete flyBehavior;
+		delete quackBehavior;
+
+		flyBehavior = new NoFly();
+		quackBehavior = new Squeak(2);
+	}
+	void display() { cout << "I am a Rubber Duck." << endl; }
 };
 
-int main() {
+int main()
+{
 
-  Mallard mary;
-  RubberDuck ralph;
-  Duck donald;
+	Mallard mary;
+	RubberDuck ralph;
+	Duck donald;
 
-  cout << endl << "Donald does this ... " << endl;
-  donald.display();
-  donald.fly();
-  donald.quack();
+	cout << endl << "Donald does this ... " << endl;
+	donald.display();
+	donald.fly();
+	donald.quack();
 
-  cout << endl << "Mary does this ... " << endl;
-  mary.display();
-  mary.fly();
-  mary.quack();
-  
-  cout << endl << "Ralph does this ... " << endl;
-  ralph.display();
-  ralph.fly();
-  ralph.quack();
+	cout << endl << "Mary does this ... " << endl;
+	mary.display();
+	mary.fly();
+	mary.quack();
 
-  cout << endl;
+	cout << endl << "Ralph does this ... " << endl;
+	ralph.display();
+	ralph.fly();
+	ralph.quack();
+
+	cout << endl;
 }
 
 
