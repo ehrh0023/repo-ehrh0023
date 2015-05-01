@@ -32,6 +32,8 @@ public:
 	void gluiControl(int controlID);
 	void leftMouseDown(int x, int y);
 	void leftMouseUp(int x, int y);
+	void keyboard(unsigned char c, int x, int y);
+	void keyboardUp(unsigned char c, int x, int y);
 
 	void display();
 	void update();

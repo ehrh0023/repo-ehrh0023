@@ -4,6 +4,7 @@
 #include "Entity/Target.h"
 #include "Entity/EntityManager.h"
 #include "Clock.h"
+#include "Keyboard.h"
 #include <time.h>
 #include <iostream>
 #include "randf.h"
@@ -93,10 +94,21 @@ void Simulation::leftMouseUp(int x, int y)
     // nohing here for now
 }
 
+void Simulation::keyboard(unsigned char c, int x, int y)
+{
+	System::Keyboard::getInstance().onKeyPress(c);
+}
+
+
+void Simulation::keyboardUp(unsigned char c, int x, int y)
+{
+	System::Keyboard::getInstance().onKeyRelease(c);
+}
 
 void Simulation::update()
 {
 	Clock::getInstance().update();
+	System::Keyboard::getInstance().update();
 	if (!paused)
 	{
 		EntityManager::getInstance().update();
