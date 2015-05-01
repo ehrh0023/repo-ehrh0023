@@ -1,0 +1,421 @@
+\hypertarget{classVector2}{\section{Vector2$<$ T $>$ Class Template Reference}
+\label{classVector2}\index{Vector2$<$ T $>$@{Vector2$<$ T $>$}}
+}
+
+
+A two dimensional templated vector of the form (x, y)  
+
+
+
+
+{\ttfamily \#include $<$Vector2.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector2_ae2f1223cb0d664aa73afb789086a4174}{Vector2} ()
+\item 
+\hyperlink{classVector2_ad79ae2f328cd2b8d895566305acdf04d}{Vector2} (T xcoord, T ycoord)
+\item 
+bool \hyperlink{classVector2_a84cd3fd4795023c476c544c4d889faf1}{operator==} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&)
+\item 
+bool \hyperlink{classVector2_a665455a989653e79f21b03302619d6bd}{operator!=} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&)
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_a6434426c127577c1f66525bb903aec52}{operator=} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&)
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_aa581ba273bb347e93058a2e2b696a329}{set\-Values} (T x, T y)
+\item 
+\hyperlink{classVector2}{Vector2} \hyperlink{classVector2_af2b0a7852790bdf522f74db750b6d143}{zero} ()
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_a98ffd6c779d7a4011f6a8f1a05ee6f9a}{operator+} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&) const 
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_ada9ee9f6d6c88e6e8c7a9c84da177b49}{operator+=} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&)
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_a43088957bb9fba96a73d564ca7c68fb6}{operator-\/} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&) const 
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_adf7a38a9d43c6830708057c30ddbf5f9}{operator-\/=} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&)
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_ad630c141ea4b5c348d1dbe90fd16af95}{operator$\ast$} (T) const 
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_aff6f9727727cb72c696ae8408ee3175f}{operator$\ast$=} (T const \&)
+\item 
+float \hyperlink{classVector2_a9d13fbfc940b88cf117b90c7bcffeec5}{dot} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&v) const 
+\item 
+float \hyperlink{classVector2_ada039a01838e14cf97b2f995f4748a61}{zcross} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&v) const 
+\item 
+float \hyperlink{classVector2_a2ba2726deca326f6cf6f90cf96c6417b}{magnitude} () const 
+\item 
+float \hyperlink{classVector2_aca33fd3614fba0f29f6145642085879f}{magnitude\-Squared} () const 
+\item 
+float \hyperlink{classVector2_aa4deaff6744e5c52980c9543cde879c2}{length} (\hyperlink{classVector2}{Vector2}$<$ T $>$ vec) const 
+\item 
+float \hyperlink{classVector2_a6d33069838bf0cf4f068da4cc5d1784e}{length\-Squared} (\hyperlink{classVector2}{Vector2}$<$ T $>$ vec) const 
+\item 
+\hyperlink{classVector2}{Vector2} \hyperlink{classVector2_a8e5a913965bcd2725ca0960022874dcc}{normalize} ()
+\item 
+\hyperlink{classVector2}{Vector2} \hyperlink{classVector2_ad3ad9070482b89306e14e6cb127e1205}{clamp} (T max)
+\item 
+\hyperlink{classVector2}{Vector2} \hyperlink{classVector2_a3c6020b1331c100a2412f254fcdd44df}{clamp\-X} (T max)
+\item 
+\hyperlink{classVector2}{Vector2} \hyperlink{classVector2_a6cc7835e6bc56dd0fee04083640ff4b6}{clamp\-Y} (T max)
+\item 
+\hyperlink{classVector2}{Vector2} \hyperlink{classVector2_af02626f147b83492346921bfb44adeb4}{rotate} (float)
+\item 
+float \hyperlink{classVector2_a820da4470e33691b242bd69b162014b4}{angle} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&v) const 
+\item 
+float \hyperlink{classVector2_aa481cb08d305491d9e3581946c94ceb4}{angle\-Magnitude} (\hyperlink{classVector2}{Vector2}$<$ T $>$ const \&v) const 
+\item 
+\hyperlink{classVector2}{Vector2}$<$ T $>$ \hyperlink{classVector2_a3447a814a110582b4c8b9944ce0d299e}{flip} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVector2_a78fa1f2ed5e261c7fbeb8f3536a1ee34}{T {\bfseries x}}\label{classVector2_a78fa1f2ed5e261c7fbeb8f3536a1ee34}
+
+\item 
+\hypertarget{classVector2_a6cfed8355591aa269f4dba43bd806ef9}{T {\bfseries y}}\label{classVector2_a6cfed8355591aa269f4dba43bd806ef9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class Vector2$<$ T $>$}
+
+A two dimensional templated vector of the form (x, y) 
+
+\begin{DoxyAuthor}{Author}
+Dennis Ehrhardt 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVector2_ae2f1223cb0d664aa73afb789086a4174}{\index{Vector2@{Vector2}!Vector2@{Vector2}}
+\index{Vector2@{Vector2}!Vector2@{Vector2}}
+\subsubsection[{Vector2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$\-::{\bf Vector2} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVector2_ae2f1223cb0d664aa73afb789086a4174}
+The default constructor creates a zero vector. \hypertarget{classVector2_ad79ae2f328cd2b8d895566305acdf04d}{\index{Vector2@{Vector2}!Vector2@{Vector2}}
+\index{Vector2@{Vector2}!Vector2@{Vector2}}
+\subsubsection[{Vector2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$\-::{\bf Vector2} (
+\begin{DoxyParamCaption}
+\item[{T}]{xcoord, }
+\item[{T}]{ycoord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVector2_ad79ae2f328cd2b8d895566305acdf04d}
+This constructor requires two parameters\-: xcoord and ycoord. 
+\begin{DoxyParams}{Parameters}
+{\em xcoord} & the x coordinate in pixels \\
+\hline
+{\em pos\-Y} & the y coordinate in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVector2_a820da4470e33691b242bd69b162014b4}{\index{Vector2@{Vector2}!angle@{angle}}
+\index{angle@{angle}!Vector2@{Vector2}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ float {\bf Vector2}$<$ T $>$\-::angle (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_a820da4470e33691b242bd69b162014b4}
+Returns the angle between two vectors 
+\begin{DoxyParams}{Parameters}
+{\em v} & the second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the angle betweem two vectors from -\/\-P\-I to P\-I 
+\end{DoxyReturn}
+\hypertarget{classVector2_aa481cb08d305491d9e3581946c94ceb4}{\index{Vector2@{Vector2}!angle\-Magnitude@{angle\-Magnitude}}
+\index{angle\-Magnitude@{angle\-Magnitude}!Vector2@{Vector2}}
+\subsubsection[{angle\-Magnitude}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ float {\bf Vector2}$<$ T $>$\-::angle\-Magnitude (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_aa481cb08d305491d9e3581946c94ceb4}
+Returns the magnitude of angle between two vectors 
+\begin{DoxyParams}{Parameters}
+{\em v} & the second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the angle betweem two vectors from 0 to P\-I 
+\end{DoxyReturn}
+\hypertarget{classVector2_ad3ad9070482b89306e14e6cb127e1205}{\index{Vector2@{Vector2}!clamp@{clamp}}
+\index{clamp@{clamp}!Vector2@{Vector2}}
+\subsubsection[{clamp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::clamp (
+\begin{DoxyParamCaption}
+\item[{T}]{max}
+\end{DoxyParamCaption}
+)}}\label{classVector2_ad3ad9070482b89306e14e6cb127e1205}
+Clamps the vector to a maximum magnitude 
+\begin{DoxyParams}{Parameters}
+{\em max} & the maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The clamped vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a3c6020b1331c100a2412f254fcdd44df}{\index{Vector2@{Vector2}!clamp\-X@{clamp\-X}}
+\index{clamp\-X@{clamp\-X}!Vector2@{Vector2}}
+\subsubsection[{clamp\-X}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::clamp\-X (
+\begin{DoxyParamCaption}
+\item[{T}]{max}
+\end{DoxyParamCaption}
+)}}\label{classVector2_a3c6020b1331c100a2412f254fcdd44df}
+Clamps the x component of the vector to a maximum 
+\begin{DoxyParams}{Parameters}
+{\em max} & the maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The clamped vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a6cc7835e6bc56dd0fee04083640ff4b6}{\index{Vector2@{Vector2}!clamp\-Y@{clamp\-Y}}
+\index{clamp\-Y@{clamp\-Y}!Vector2@{Vector2}}
+\subsubsection[{clamp\-Y}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::clamp\-Y (
+\begin{DoxyParamCaption}
+\item[{T}]{max}
+\end{DoxyParamCaption}
+)}}\label{classVector2_a6cc7835e6bc56dd0fee04083640ff4b6}
+Clamps the y component of the vector to a maximum 
+\begin{DoxyParams}{Parameters}
+{\em max} & the maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The clamped vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a9d13fbfc940b88cf117b90c7bcffeec5}{\index{Vector2@{Vector2}!dot@{dot}}
+\index{dot@{dot}!Vector2@{Vector2}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ float {\bf Vector2}$<$ T $>$\-::dot (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_a9d13fbfc940b88cf117b90c7bcffeec5}
+Returns the dot product of this dot v 
+\begin{DoxyParams}{Parameters}
+{\em v} & the second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product (float) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a3447a814a110582b4c8b9944ce0d299e}{\index{Vector2@{Vector2}!flip@{flip}}
+\index{flip@{flip}!Vector2@{Vector2}}
+\subsubsection[{flip}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::flip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVector2_a3447a814a110582b4c8b9944ce0d299e}
+Rotates the vector by pi radians \begin{DoxyReturn}{Returns}
+The flipped vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_aa4deaff6744e5c52980c9543cde879c2}{\index{Vector2@{Vector2}!length@{length}}
+\index{length@{length}!Vector2@{Vector2}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ float {\bf Vector2}$<$ T $>$\-::length (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$}]{vec}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_aa4deaff6744e5c52980c9543cde879c2}
+Returns the distance between two vectors 
+\begin{DoxyParams}{Parameters}
+{\em vec} & the second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the vectors as a (float) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a6d33069838bf0cf4f068da4cc5d1784e}{\index{Vector2@{Vector2}!length\-Squared@{length\-Squared}}
+\index{length\-Squared@{length\-Squared}!Vector2@{Vector2}}
+\subsubsection[{length\-Squared}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ float {\bf Vector2}$<$ T $>$\-::length\-Squared (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$}]{vec}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_a6d33069838bf0cf4f068da4cc5d1784e}
+Returns the distance squared between two vectors 
+\begin{DoxyParams}{Parameters}
+{\em vec} & the second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the vectors squared (float) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a2ba2726deca326f6cf6f90cf96c6417b}{\index{Vector2@{Vector2}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Vector2@{Vector2}}
+\subsubsection[{magnitude}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ float {\bf Vector2}$<$ T $>$\-::magnitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_a2ba2726deca326f6cf6f90cf96c6417b}
+Returns the magnitude of the vector \begin{DoxyReturn}{Returns}
+Magnitude (float) 
+\end{DoxyReturn}
+\hypertarget{classVector2_aca33fd3614fba0f29f6145642085879f}{\index{Vector2@{Vector2}!magnitude\-Squared@{magnitude\-Squared}}
+\index{magnitude\-Squared@{magnitude\-Squared}!Vector2@{Vector2}}
+\subsubsection[{magnitude\-Squared}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ float {\bf Vector2}$<$ T $>$\-::magnitude\-Squared (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_aca33fd3614fba0f29f6145642085879f}
+Returns the magnitude squared of the vector \begin{DoxyReturn}{Returns}
+Magnitude squared (float) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a8e5a913965bcd2725ca0960022874dcc}{\index{Vector2@{Vector2}!normalize@{normalize}}
+\index{normalize@{normalize}!Vector2@{Vector2}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVector2_a8e5a913965bcd2725ca0960022874dcc}
+Makes the vector have a magnitude of 1 \begin{DoxyReturn}{Returns}
+The normalized vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a665455a989653e79f21b03302619d6bd}{\index{Vector2@{Vector2}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Vector2@{Vector2}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf Vector2}$<$ T $>$\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVector2_a665455a989653e79f21b03302619d6bd}
+Override != operator to correctly check if vectors are not equivalent \hypertarget{classVector2_ad630c141ea4b5c348d1dbe90fd16af95}{\index{Vector2@{Vector2}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector2@{Vector2}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{T}]{scalar}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_ad630c141ea4b5c348d1dbe90fd16af95}
+Override $\ast$ operator to multiply the vector by a scalar \begin{DoxyReturn}{Returns}
+The resulting vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_aff6f9727727cb72c696ae8408ee3175f}{\index{Vector2@{Vector2}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vector2@{Vector2}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{T const \&}]{scalar}
+\end{DoxyParamCaption}
+)}}\label{classVector2_aff6f9727727cb72c696ae8408ee3175f}
+Override $\ast$= operator to multiply the vector by a scalar and set to the result \begin{DoxyReturn}{Returns}
+The resulting vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a98ffd6c779d7a4011f6a8f1a05ee6f9a}{\index{Vector2@{Vector2}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector2@{Vector2}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_a98ffd6c779d7a4011f6a8f1a05ee6f9a}
+Override + operator to correctly add another vector \begin{DoxyReturn}{Returns}
+The resulting vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_ada9ee9f6d6c88e6e8c7a9c84da177b49}{\index{Vector2@{Vector2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector2@{Vector2}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVector2_ada9ee9f6d6c88e6e8c7a9c84da177b49}
+Override += operator to add another vector and set to the result \begin{DoxyReturn}{Returns}
+The resulting vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a43088957bb9fba96a73d564ca7c68fb6}{\index{Vector2@{Vector2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector2@{Vector2}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_a43088957bb9fba96a73d564ca7c68fb6}
+Override -\/ operator to correctly subtract another vector \begin{DoxyReturn}{Returns}
+The resulting vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_adf7a38a9d43c6830708057c30ddbf5f9}{\index{Vector2@{Vector2}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vector2@{Vector2}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVector2_adf7a38a9d43c6830708057c30ddbf5f9}
+Override -\/= operator to subtract another vector and set to the result \begin{DoxyReturn}{Returns}
+The resulting vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_a6434426c127577c1f66525bb903aec52}{\index{Vector2@{Vector2}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector2@{Vector2}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVector2_a6434426c127577c1f66525bb903aec52}
+Override = operator to set a vector equal to another \hypertarget{classVector2_a84cd3fd4795023c476c544c4d889faf1}{\index{Vector2@{Vector2}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector2@{Vector2}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf Vector2}$<$ T $>$\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVector2_a84cd3fd4795023c476c544c4d889faf1}
+Override == operator to correctly check if vectors are equivalent \hypertarget{classVector2_af02626f147b83492346921bfb44adeb4}{\index{Vector2@{Vector2}!rotate@{rotate}}
+\index{rotate@{rotate}!Vector2@{Vector2}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classVector2_af02626f147b83492346921bfb44adeb4}
+Rotates the Vector in radians 
+\begin{DoxyParams}{Parameters}
+{\em angle} & angle in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rotated vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_aa581ba273bb347e93058a2e2b696a329}{\index{Vector2@{Vector2}!set\-Values@{set\-Values}}
+\index{set\-Values@{set\-Values}!Vector2@{Vector2}}
+\subsubsection[{set\-Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::set\-Values (
+\begin{DoxyParamCaption}
+\item[{T}]{x, }
+\item[{T}]{y}
+\end{DoxyParamCaption}
+)}}\label{classVector2_aa581ba273bb347e93058a2e2b696a329}
+Set x and y of the vector 
+\begin{DoxyParams}{Parameters}
+{\em x} & the x value \\
+\hline
+{\em y} & the y value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new vector (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classVector2_ada039a01838e14cf97b2f995f4748a61}{\index{Vector2@{Vector2}!zcross@{zcross}}
+\index{zcross@{zcross}!Vector2@{Vector2}}
+\subsubsection[{zcross}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ float {\bf Vector2}$<$ T $>$\-::zcross (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ T $>$ const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVector2_ada039a01838e14cf97b2f995f4748a61}
+Computes the zcross product between this and vector v 
+\begin{DoxyParams}{Parameters}
+{\em v} & the second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The z component of the zcross product 
+\end{DoxyReturn}
+\hypertarget{classVector2_af2b0a7852790bdf522f74db750b6d143}{\index{Vector2@{Vector2}!zero@{zero}}
+\index{zero@{zero}!Vector2@{Vector2}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector2}$<$ T $>$ {\bf Vector2}$<$ T $>$\-::zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVector2_af2b0a7852790bdf522f74db750b6d143}
+Sets the Vector to (0,0) \begin{DoxyReturn}{Returns}
+The vector (0,0) (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Vector2.\-h\item 
+Vector2.\-cpp\end{DoxyCompactItemize}

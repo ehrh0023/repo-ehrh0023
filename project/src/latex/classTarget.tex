@@ -1,0 +1,111 @@
+\hypertarget{classTarget}{\section{Target Class Reference}
+\label{classTarget}\index{Target@{Target}}
+}
+
+
+The class for creating targets.  
+
+
+
+
+{\ttfamily \#include $<$Target.\-h$>$}
+
+Inheritance diagram for Target\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTarget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTarget_ab29ccfc5d42140d4cb1a4ae06bf4aab6}{Target} (int pos\-X, int pos\-Y, int radius)
+\item 
+\hyperlink{classTarget_a1c253c2c60ff0dd65935c189fd4da1ce}{Target} (\hyperlink{classVector2}{Vector2f} position, int radius)
+\item 
+void \hyperlink{classTarget_a33e3e447eeba8ded77cb3becf30f98d3}{update} ()
+\item 
+void \hyperlink{classTarget_a5230b99d26495595cf6879dd6816277a}{render} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The class for creating targets. 
+
+\begin{DoxyAuthor}{Author}
+Dennis Ehrhardt 
+
+Evan Stuempfig 
+
+Andrew Hartfiel 
+
+David Tran 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTarget_ab29ccfc5d42140d4cb1a4ae06bf4aab6}{\index{Target@{Target}!Target@{Target}}
+\index{Target@{Target}!Target@{Target}}
+\subsubsection[{Target}]{\setlength{\rightskip}{0pt plus 5cm}Target\-::\-Target (
+\begin{DoxyParamCaption}
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTarget_ab29ccfc5d42140d4cb1a4ae06bf4aab6}
+This constructor requires three parameters\-: x position, y position, and radius. 
+\begin{DoxyParams}{Parameters}
+{\em pos\-X} & the x position in pixels \\
+\hline
+{\em pos\-Y} & the y position in pixels \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTarget_a1c253c2c60ff0dd65935c189fd4da1ce}{\index{Target@{Target}!Target@{Target}}
+\index{Target@{Target}!Target@{Target}}
+\subsubsection[{Target}]{\setlength{\rightskip}{0pt plus 5cm}Target\-::\-Target (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f}}]{position, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTarget_a1c253c2c60ff0dd65935c189fd4da1ce}
+This constructor requires two parameters\-: location and radius. 
+\begin{DoxyParams}{Parameters}
+{\em location} & the x and y position in pixels as a \hyperlink{classVector2}{Vector2} \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTarget_a5230b99d26495595cf6879dd6816277a}{\index{Target@{Target}!render@{render}}
+\index{render@{render}!Target@{Target}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Target\-::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTarget_a5230b99d26495595cf6879dd6816277a}
+Draw the target on the screen 
+
+Reimplemented from \hyperlink{classEntity_af5ca41372ff108e4c044e8d927995a27}{Entity}.
+
+\hypertarget{classTarget_a33e3e447eeba8ded77cb3becf30f98d3}{\index{Target@{Target}!update@{update}}
+\index{update@{update}!Target@{Target}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Target\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTarget_a33e3e447eeba8ded77cb3becf30f98d3}
+Update the target's position and behavior 
+
+Reimplemented from \hyperlink{classEntity_a00b6eeaf99b35c8f8b10b5fbfc1baf4f}{Entity}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Entity/Target.\-h\item 
+Entity/Target.\-cpp\end{DoxyCompactItemize}

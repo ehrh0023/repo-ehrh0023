@@ -1,0 +1,111 @@
+\hypertarget{classObstacle}{\section{Obstacle Class Reference}
+\label{classObstacle}\index{Obstacle@{Obstacle}}
+}
+
+
+The class for creating obstacles.  
+
+
+
+
+{\ttfamily \#include $<$Obstacle.\-h$>$}
+
+Inheritance diagram for Obstacle\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObstacle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObstacle_a54f7a6e679d123958539eabe85694656}{Obstacle} (int pos\-X, int pos\-Y, int radius)
+\item 
+\hyperlink{classObstacle_a2ccff96a4ddb5aee99504a9f90061f32}{Obstacle} (\hyperlink{classVector2}{Vector2f} position, int radius)
+\item 
+void \hyperlink{classObstacle_a3fe041a93f5b2e9e5c5750bcef2382a4}{update} ()
+\item 
+void \hyperlink{classObstacle_ab5dc508912a5c772e8a9c732c9db5c24}{render} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The class for creating obstacles. 
+
+\begin{DoxyAuthor}{Author}
+Dennis Ehrhardt 
+
+Evan Stuempfig 
+
+Andrew Hartfiel 
+
+David Tran 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classObstacle_a54f7a6e679d123958539eabe85694656}{\index{Obstacle@{Obstacle}!Obstacle@{Obstacle}}
+\index{Obstacle@{Obstacle}!Obstacle@{Obstacle}}
+\subsubsection[{Obstacle}]{\setlength{\rightskip}{0pt plus 5cm}Obstacle\-::\-Obstacle (
+\begin{DoxyParamCaption}
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classObstacle_a54f7a6e679d123958539eabe85694656}
+This constructor requires three parameters\-: x position, y position, and radius. 
+\begin{DoxyParams}{Parameters}
+{\em pos\-X} & the x position in pixels \\
+\hline
+{\em pos\-Y} & the y position in pixels \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classObstacle_a2ccff96a4ddb5aee99504a9f90061f32}{\index{Obstacle@{Obstacle}!Obstacle@{Obstacle}}
+\index{Obstacle@{Obstacle}!Obstacle@{Obstacle}}
+\subsubsection[{Obstacle}]{\setlength{\rightskip}{0pt plus 5cm}Obstacle\-::\-Obstacle (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f}}]{position, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classObstacle_a2ccff96a4ddb5aee99504a9f90061f32}
+This constructor requires two parameters\-: location and radius. 
+\begin{DoxyParams}{Parameters}
+{\em location} & the x and y position in pixels as a \hyperlink{classVector2}{Vector2} \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classObstacle_ab5dc508912a5c772e8a9c732c9db5c24}{\index{Obstacle@{Obstacle}!render@{render}}
+\index{render@{render}!Obstacle@{Obstacle}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Obstacle\-::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classObstacle_ab5dc508912a5c772e8a9c732c9db5c24}
+Draw the obstacle on the screen 
+
+Reimplemented from \hyperlink{classEntity_af5ca41372ff108e4c044e8d927995a27}{Entity}.
+
+\hypertarget{classObstacle_a3fe041a93f5b2e9e5c5750bcef2382a4}{\index{Obstacle@{Obstacle}!update@{update}}
+\index{update@{update}!Obstacle@{Obstacle}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Obstacle\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classObstacle_a3fe041a93f5b2e9e5c5750bcef2382a4}
+Update the obstacle's position and behavior 
+
+Reimplemented from \hyperlink{classEntity_a00b6eeaf99b35c8f8b10b5fbfc1baf4f}{Entity}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Entity/Obstacle.\-h\item 
+Entity/Obstacle.\-cpp\end{DoxyCompactItemize}

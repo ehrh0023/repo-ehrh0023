@@ -1,0 +1,87 @@
+\hypertarget{namespaceDrawing}{\section{Drawing Namespace Reference}
+\label{namespaceDrawing}\index{Drawing@{Drawing}}
+}
+
+
+A place to hold the render function.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceDrawing_a18600f6b38e0e9fd5ca4d14d2c6c65f8}{draw\-Circle} (\hyperlink{classVector2}{Vector2f} position, float radius, \hyperlink{classColor}{Color} color)
+\item 
+void \hyperlink{namespaceDrawing_abf48d4f58682687283db03dd4af75c50}{draw\-Line} (\hyperlink{classVector2}{Vector2f} start, \hyperlink{classVector2}{Vector2f} end, \hyperlink{classColor}{Color} color, float line\-Width=4)
+\item 
+int \hyperlink{namespaceDrawing_aad23f577b63b549618750ebdad254ad3}{get\-Window\-Width} ()
+\item 
+int \hyperlink{namespaceDrawing_ae71c3e98ec705d2fc14f87c41f082324}{get\-Window\-Height} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A place to hold the render function. \begin{DoxyAuthor}{Author}
+David Tran
+\end{DoxyAuthor}
+This namespace holds the drawing functions for rendering the entities. 
+
+\subsection{Function Documentation}
+\hypertarget{namespaceDrawing_a18600f6b38e0e9fd5ca4d14d2c6c65f8}{\index{Drawing@{Drawing}!draw\-Circle@{draw\-Circle}}
+\index{draw\-Circle@{draw\-Circle}!Drawing@{Drawing}}
+\subsubsection[{draw\-Circle}]{\setlength{\rightskip}{0pt plus 5cm}void Drawing\-::draw\-Circle (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f}}]{position, }
+\item[{float}]{radius, }
+\item[{{\bf Color}}]{color}
+\end{DoxyParamCaption}
+)}}\label{namespaceDrawing_a18600f6b38e0e9fd5ca4d14d2c6c65f8}
+Draw a circle 
+\begin{DoxyParams}{Parameters}
+{\em position} & the position of the circle in pixels (Vector2f) \\
+\hline
+{\em radius} & the radius of the circle in pixels (float) \\
+\hline
+{\em color} & the color of the circle (\hyperlink{classColor}{Color}) \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceDrawing_abf48d4f58682687283db03dd4af75c50}{\index{Drawing@{Drawing}!draw\-Line@{draw\-Line}}
+\index{draw\-Line@{draw\-Line}!Drawing@{Drawing}}
+\subsubsection[{draw\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void Drawing\-::draw\-Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f}}]{start, }
+\item[{{\bf Vector2f}}]{end, }
+\item[{{\bf Color}}]{color, }
+\item[{float}]{line\-Width}
+\end{DoxyParamCaption}
+)}}\label{namespaceDrawing_abf48d4f58682687283db03dd4af75c50}
+Draw a line 
+\begin{DoxyParams}{Parameters}
+{\em start} & the beginning point of the line (Vector2f) \\
+\hline
+{\em end} & the ending point of the line (Vector2f) \\
+\hline
+{\em color} & the color of the line (\hyperlink{classColor}{Color}) \\
+\hline
+{\em line\-Width} & (optional) the width of the line (float) \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceDrawing_ae71c3e98ec705d2fc14f87c41f082324}{\index{Drawing@{Drawing}!get\-Window\-Height@{get\-Window\-Height}}
+\index{get\-Window\-Height@{get\-Window\-Height}!Drawing@{Drawing}}
+\subsubsection[{get\-Window\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int Drawing\-::get\-Window\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceDrawing_ae71c3e98ec705d2fc14f87c41f082324}
+Get the window height \begin{DoxyReturn}{Returns}
+The window height (int) 
+\end{DoxyReturn}
+\hypertarget{namespaceDrawing_aad23f577b63b549618750ebdad254ad3}{\index{Drawing@{Drawing}!get\-Window\-Width@{get\-Window\-Width}}
+\index{get\-Window\-Width@{get\-Window\-Width}!Drawing@{Drawing}}
+\subsubsection[{get\-Window\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int Drawing\-::get\-Window\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceDrawing_aad23f577b63b549618750ebdad254ad3}
+Get the window width \begin{DoxyReturn}{Returns}
+The window width (int) 
+\end{DoxyReturn}

@@ -1,0 +1,481 @@
+\hypertarget{classEntity}{\section{Entity Class Reference}
+\label{classEntity}\index{Entity@{Entity}}
+}
+
+
+This is the base class for all Entities. Robots, targets, and obstacles are all derived from this class.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\-h$>$}
+
+Inheritance diagram for Entity\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEntity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEntity_a5c21cd9eab563bb481d9b5c65de91267}{Entity} (int pos\-X, int pos\-Y, int radius)
+\item 
+\hyperlink{classEntity_ad812a81e2ea7dfd1f4a0954c7ada44ad}{Entity} (\hyperlink{classVector2}{Vector2f}, int radius)
+\item 
+virtual void \hyperlink{classEntity_a00b6eeaf99b35c8f8b10b5fbfc1baf4f}{update} ()
+\item 
+virtual void \hyperlink{classEntity_af5ca41372ff108e4c044e8d927995a27}{render} ()
+\item 
+void \hyperlink{classEntity_a84fc43c322f66bf27ac6d90c328caf33}{translate} (\hyperlink{classVector2}{Vector2}$<$ int $>$ const \&shift)
+\item 
+void \hyperlink{classEntity_a1124a22e501d751041e41036af568ce6}{translate} (\hyperlink{classVector2}{Vector2f} const \&shift)
+\item 
+void \hyperlink{classEntity_a7d7233e4e9a8d9557648aab4612f0f3b}{translate} (int x, int y)
+\item 
+void \hyperlink{classEntity_a563fef5599c6da424fe656622b9d9324}{rotate} (float angle)
+\item 
+void \hyperlink{classEntity_ae9392a8133e210ad016f8e4ea4d63290}{rotate\-Rad} (float angle)
+\item 
+\hyperlink{classVector2}{Vector2f} \hyperlink{classEntity_ac45ad78fd8ef0d9938c1351798c181ab}{get\-Position} () const 
+\item 
+void \hyperlink{classEntity_a8c26c471c1f3e3a804d460533199bebf}{set\-Position} (\hyperlink{classVector2}{Vector2f} const \&)
+\item 
+\hyperlink{classVector2}{Vector2f} \hyperlink{classEntity_a899a2b90a1d7e26205095cad1d32a6d3}{get\-Orientation} () const 
+\item 
+void \hyperlink{classEntity_ac3c275ddf145d28416cdb6d0aad10ebf}{set\-Orientation} (\hyperlink{classVector2}{Vector2f} const \&)
+\item 
+float \hyperlink{classEntity_a35d819a8e850200d9734dace476d602a}{get\-Rotation} () const 
+\item 
+void \hyperlink{classEntity_a7d1e27098cf98b5e6fb6043263217315}{set\-Rotation} (float)
+\item 
+int \hyperlink{classEntity_ab9995764cb54c34e3715f7089a8e1714}{get\-Speed} () const 
+\item 
+void \hyperlink{classEntity_a2c6aaac44b0994328567b0311849c627}{set\-Speed} (int)
+\item 
+\hyperlink{classVector2}{Vector2f} \hyperlink{classEntity_a0217810f5096f6c0d04212d3cc1a935a}{get\-Velocity} () const 
+\item 
+void \hyperlink{classEntity_a03b1fc7ec44fe29fb946b86d6fe65842}{set\-Velocity} (\hyperlink{classVector2}{Vector2f} const \&)
+\item 
+bool \hyperlink{classEntity_a634c100994978b5ee96f8802e052a2d4}{collide} (\hyperlink{classEntity}{Entity} $\ast$other\-Entity)
+\item 
+bool \hyperlink{classEntity_a5591db8c22280b2157794be2841cb5a2}{bounds\-Check} ()
+\item 
+int \hyperlink{classEntity_ac2f290a20927f548e8742976b222a556}{get\-Radius} () const 
+\item 
+void \hyperlink{classEntity_ae5e084e71667daf1b18fc94b2cb8f363}{set\-Radius} (int)
+\item 
+unsigned int \hyperlink{classEntity_a69bd5fbeece40ba87d1e6f693f41d9ff}{get\-I\-D} ()
+\item 
+void \hyperlink{classEntity_a4992b9b8d1d9ef8f6d90ee20a053262c}{set\-Color} (\hyperlink{classColor}{Color} new\-Color)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classEntity_a9e60f2350275170500f33bcb8e57f3bc}{get\-Color} ()
+\item 
+void \hyperlink{classEntity_a4ff4124f2dfef873a2219b68f17bdfe5}{mark\-For\-Deletion} ()
+\item 
+virtual void \hyperlink{classEntity_a8e8ddac9be28d59f187a51e0fca0f056}{on\-Collide} (\hyperlink{classEntity}{Entity} $\ast$other\-Entity)
+\item 
+void \hyperlink{classEntity_a571c43e10649639994469f4229078fa0}{wall\-Collide} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classEntity_a6af9d6498134ad0906011778bc5736db}{\hyperlink{classVector2}{Vector2f} {\bfseries position}}\label{classEntity_a6af9d6498134ad0906011778bc5736db}
+
+\item 
+\hypertarget{classEntity_acd7af12063926ab8cd654539328e5532}{int {\bfseries radius}}\label{classEntity_acd7af12063926ab8cd654539328e5532}
+
+\item 
+\hypertarget{classEntity_a5fa136f1d80e45ecf5c44199684af15d}{\hyperlink{classVector2}{Vector2f} {\bfseries orientation}}\label{classEntity_a5fa136f1d80e45ecf5c44199684af15d}
+
+\item 
+\hypertarget{classEntity_aa384ccfdaba36b1ff5f5db51ec3cdcb1}{float {\bfseries rotation}}\label{classEntity_aa384ccfdaba36b1ff5f5db51ec3cdcb1}
+
+\item 
+\hypertarget{classEntity_a12ea871d945d59cbf57b8f8f7d2179ed}{int {\bfseries speed}}\label{classEntity_a12ea871d945d59cbf57b8f8f7d2179ed}
+
+\item 
+\hypertarget{classEntity_a89d61354233997a696f1e0f82ecb9372}{\hyperlink{classVector2}{Vector2f} {\bfseries velocity}}\label{classEntity_a89d61354233997a696f1e0f82ecb9372}
+
+\item 
+\hypertarget{classEntity_aedfb34471b8e55194d5c93603ed23158}{unsigned int {\bfseries entity\-I\-D}}\label{classEntity_aedfb34471b8e55194d5c93603ed23158}
+
+\item 
+\hypertarget{classEntity_a2b8ccf8a215e4880a123b1c452438b01}{bool {\bfseries set\-For\-Deletion}}\label{classEntity_a2b8ccf8a215e4880a123b1c452438b01}
+
+\item 
+\hypertarget{classEntity_a98cdd3a9cc6efbecde0ad90ef349574c}{\hyperlink{classColor}{Color} {\bfseries rgb}}\label{classEntity_a98cdd3a9cc6efbecde0ad90ef349574c}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classEntity_a6f579cda6059d102e9074e11a27e0282}{class {\bfseries Entity\-Manager}}\label{classEntity_a6f579cda6059d102e9074e11a27e0282}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the base class for all Entities. Robots, targets, and obstacles are all derived from this class. 
+
+\begin{DoxyAuthor}{Author}
+Dennis Ehrhardt 
+
+Evan Stuempfig 
+
+Andrew Hartfiel 
+
+David Tran 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEntity_a5c21cd9eab563bb481d9b5c65de91267}{\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\-::\-Entity (
+\begin{DoxyParamCaption}
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a5c21cd9eab563bb481d9b5c65de91267}
+This constructor requires three parameters\-: x position, y position, and radius. 
+\begin{DoxyParams}{Parameters}
+{\em pos\-X} & the x position in pixels \\
+\hline
+{\em pos\-Y} & the y position in pixels \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_ad812a81e2ea7dfd1f4a0954c7ada44ad}{\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\-::\-Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f}}]{vector\-In, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)}}\label{classEntity_ad812a81e2ea7dfd1f4a0954c7ada44ad}
+This constructor requires two parameters\-: location and radius. 
+\begin{DoxyParams}{Parameters}
+{\em location} & the x and y position in pixels as a \hyperlink{classVector2}{Vector2} \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEntity_a5591db8c22280b2157794be2841cb5a2}{\index{Entity@{Entity}!bounds\-Check@{bounds\-Check}}
+\index{bounds\-Check@{bounds\-Check}!Entity@{Entity}}
+\subsubsection[{bounds\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Entity\-::bounds\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a5591db8c22280b2157794be2841cb5a2}
+Check that the entity is within the bounds of the map if it is not in bounds, it is brought in bounds \begin{DoxyReturn}{Returns}
+False if out of bounds and brought back, True if originally in bounds 
+\end{DoxyReturn}
+\hypertarget{classEntity_a634c100994978b5ee96f8802e052a2d4}{\index{Entity@{Entity}!collide@{collide}}
+\index{collide@{collide}!Entity@{Entity}}
+\subsubsection[{collide}]{\setlength{\rightskip}{0pt plus 5cm}bool Entity\-::collide (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{other\-Entity}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a634c100994978b5ee96f8802e052a2d4}
+Check if there is a collision with another entity 
+\begin{DoxyParams}{Parameters}
+{\em other\-Entity} & the other entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if collided, False otherwise 
+\end{DoxyReturn}
+\hypertarget{classEntity_a9e60f2350275170500f33bcb8e57f3bc}{\index{Entity@{Entity}!get\-Color@{get\-Color}}
+\index{get\-Color@{get\-Color}!Entity@{Entity}}
+\subsubsection[{get\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Entity\-::get\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a9e60f2350275170500f33bcb8e57f3bc}
+Get the color of the entity as R\-G\-B floats \begin{DoxyReturn}{Returns}
+The color makeup of the entity 
+\end{DoxyReturn}
+\hypertarget{classEntity_a69bd5fbeece40ba87d1e6f693f41d9ff}{\index{Entity@{Entity}!get\-I\-D@{get\-I\-D}}
+\index{get\-I\-D@{get\-I\-D}!Entity@{Entity}}
+\subsubsection[{get\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Entity\-::get\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a69bd5fbeece40ba87d1e6f693f41d9ff}
+Get the I\-D of the entity \begin{DoxyReturn}{Returns}
+The I\-D (int) 
+\end{DoxyReturn}
+\hypertarget{classEntity_a899a2b90a1d7e26205095cad1d32a6d3}{\index{Entity@{Entity}!get\-Orientation@{get\-Orientation}}
+\index{get\-Orientation@{get\-Orientation}!Entity@{Entity}}
+\subsubsection[{get\-Orientation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} Entity\-::get\-Orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEntity_a899a2b90a1d7e26205095cad1d32a6d3}
+Get the orientation of the entity \begin{DoxyReturn}{Returns}
+The orientation (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classEntity_ac45ad78fd8ef0d9938c1351798c181ab}{\index{Entity@{Entity}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!Entity@{Entity}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} Entity\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEntity_ac45ad78fd8ef0d9938c1351798c181ab}
+Get the position of the center \begin{DoxyReturn}{Returns}
+The position (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classEntity_ac2f290a20927f548e8742976b222a556}{\index{Entity@{Entity}!get\-Radius@{get\-Radius}}
+\index{get\-Radius@{get\-Radius}!Entity@{Entity}}
+\subsubsection[{get\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}int Entity\-::get\-Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEntity_ac2f290a20927f548e8742976b222a556}
+Get the radius of the entity in pixels \begin{DoxyReturn}{Returns}
+The radius (int) 
+\end{DoxyReturn}
+\hypertarget{classEntity_a35d819a8e850200d9734dace476d602a}{\index{Entity@{Entity}!get\-Rotation@{get\-Rotation}}
+\index{get\-Rotation@{get\-Rotation}!Entity@{Entity}}
+\subsubsection[{get\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}float Entity\-::get\-Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEntity_a35d819a8e850200d9734dace476d602a}
+Get the current speed in pixels per second \begin{DoxyReturn}{Returns}
+The speed (int) 
+\end{DoxyReturn}
+\hypertarget{classEntity_ab9995764cb54c34e3715f7089a8e1714}{\index{Entity@{Entity}!get\-Speed@{get\-Speed}}
+\index{get\-Speed@{get\-Speed}!Entity@{Entity}}
+\subsubsection[{get\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}int Entity\-::get\-Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEntity_ab9995764cb54c34e3715f7089a8e1714}
+Get the current speed in pixels per second \begin{DoxyReturn}{Returns}
+The speed (int) 
+\end{DoxyReturn}
+\hypertarget{classEntity_a0217810f5096f6c0d04212d3cc1a935a}{\index{Entity@{Entity}!get\-Velocity@{get\-Velocity}}
+\index{get\-Velocity@{get\-Velocity}!Entity@{Entity}}
+\subsubsection[{get\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} Entity\-::get\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEntity_a0217810f5096f6c0d04212d3cc1a935a}
+Get the velocity of the entity in pixels per second \begin{DoxyReturn}{Returns}
+The velocity (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classEntity_a4ff4124f2dfef873a2219b68f17bdfe5}{\index{Entity@{Entity}!mark\-For\-Deletion@{mark\-For\-Deletion}}
+\index{mark\-For\-Deletion@{mark\-For\-Deletion}!Entity@{Entity}}
+\subsubsection[{mark\-For\-Deletion}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::mark\-For\-Deletion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a4ff4124f2dfef873a2219b68f17bdfe5}
+Tell the \hyperlink{classEntityManager}{Entity\-Manager} to delete this object \hypertarget{classEntity_a8e8ddac9be28d59f187a51e0fca0f056}{\index{Entity@{Entity}!on\-Collide@{on\-Collide}}
+\index{on\-Collide@{on\-Collide}!Entity@{Entity}}
+\subsubsection[{on\-Collide}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::on\-Collide (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{other\-Entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEntity_a8e8ddac9be28d59f187a51e0fca0f056}
+Called when this entity collides with another 
+\begin{DoxyParams}{Parameters}
+{\em other\-Entity} & the other entity \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classRobotClass_a84067f1a5a37b6a7113032e08daad9f2}{Robot\-Class}.
+
+\hypertarget{classEntity_af5ca41372ff108e4c044e8d927995a27}{\index{Entity@{Entity}!render@{render}}
+\index{render@{render}!Entity@{Entity}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEntity_af5ca41372ff108e4c044e8d927995a27}
+Draw the entity on the screen 
+
+Reimplemented in \hyperlink{classRobotClass_a739de3580edf634c29e1185364d96d32}{Robot\-Class}, \hyperlink{classObstacle_ab5dc508912a5c772e8a9c732c9db5c24}{Obstacle}, and \hyperlink{classTarget_a5230b99d26495595cf6879dd6816277a}{Target}.
+
+\hypertarget{classEntity_a563fef5599c6da424fe656622b9d9324}{\index{Entity@{Entity}!rotate@{rotate}}
+\index{rotate@{rotate}!Entity@{Entity}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a563fef5599c6da424fe656622b9d9324}
+Rotate the entity's orientation in degrees 
+\begin{DoxyParams}{Parameters}
+{\em angle} & how much to rotate the entity in degrees \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_ae9392a8133e210ad016f8e4ea4d63290}{\index{Entity@{Entity}!rotate\-Rad@{rotate\-Rad}}
+\index{rotate\-Rad@{rotate\-Rad}!Entity@{Entity}}
+\subsubsection[{rotate\-Rad}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::rotate\-Rad (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classEntity_ae9392a8133e210ad016f8e4ea4d63290}
+Rotate the entity's orientation 
+\begin{DoxyParams}{Parameters}
+{\em angle} & how much to rotate the entity in radians \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a4992b9b8d1d9ef8f6d90ee20a053262c}{\index{Entity@{Entity}!set\-Color@{set\-Color}}
+\index{set\-Color@{set\-Color}!Entity@{Entity}}
+\subsubsection[{set\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Color (
+\begin{DoxyParamCaption}
+\item[{{\bf Color}}]{new\-Color}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a4992b9b8d1d9ef8f6d90ee20a053262c}
+Change the color of the entity 
+\begin{DoxyParams}{Parameters}
+{\em new\-Color} & the new color of the entity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_ac3c275ddf145d28416cdb6d0aad10ebf}{\index{Entity@{Entity}!set\-Orientation@{set\-Orientation}}
+\index{set\-Orientation@{set\-Orientation}!Entity@{Entity}}
+\subsubsection[{set\-Orientation}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Orientation (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f} const \&}]{new\-Orientation}
+\end{DoxyParamCaption}
+)}}\label{classEntity_ac3c275ddf145d28416cdb6d0aad10ebf}
+Set the orientation of entity 
+\begin{DoxyParams}{Parameters}
+{\em new\-Orientation} & the new orientation of the entity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a8c26c471c1f3e3a804d460533199bebf}{\index{Entity@{Entity}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!Entity@{Entity}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f} const \&}]{new\-Position}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a8c26c471c1f3e3a804d460533199bebf}
+Set the position of the center 
+\begin{DoxyParams}{Parameters}
+{\em new\-Position} & the new position of the center \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_ae5e084e71667daf1b18fc94b2cb8f363}{\index{Entity@{Entity}!set\-Radius@{set\-Radius}}
+\index{set\-Radius@{set\-Radius}!Entity@{Entity}}
+\subsubsection[{set\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Radius (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Radius}
+\end{DoxyParamCaption}
+)}}\label{classEntity_ae5e084e71667daf1b18fc94b2cb8f363}
+Set the radius of the entity in pixels 
+\begin{DoxyParams}{Parameters}
+{\em new\-Radius} & the new radius of the entity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a7d1e27098cf98b5e6fb6043263217315}{\index{Entity@{Entity}!set\-Rotation@{set\-Rotation}}
+\index{set\-Rotation@{set\-Rotation}!Entity@{Entity}}
+\subsubsection[{set\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Rotation (
+\begin{DoxyParamCaption}
+\item[{float}]{new\-Rotation}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a7d1e27098cf98b5e6fb6043263217315}
+Set the rotation of entity 
+\begin{DoxyParams}{Parameters}
+{\em new\-Rotation} & the new rotation of the entity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a2c6aaac44b0994328567b0311849c627}{\index{Entity@{Entity}!set\-Speed@{set\-Speed}}
+\index{set\-Speed@{set\-Speed}!Entity@{Entity}}
+\subsubsection[{set\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Speed (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Speed}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a2c6aaac44b0994328567b0311849c627}
+Set the current speed in pixels per second 
+\begin{DoxyParams}{Parameters}
+{\em new\-Speed} & the new speed of the entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+values below 0 are rounded to 0 
+\end{DoxyNote}
+\hypertarget{classEntity_a03b1fc7ec44fe29fb946b86d6fe65842}{\index{Entity@{Entity}!set\-Velocity@{set\-Velocity}}
+\index{set\-Velocity@{set\-Velocity}!Entity@{Entity}}
+\subsubsection[{set\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::set\-Velocity (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f} const \&}]{new\-Velocity}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a03b1fc7ec44fe29fb946b86d6fe65842}
+Set the velocity of the entity in pixels per second 
+\begin{DoxyParams}{Parameters}
+{\em new\-Velocity} & the new velocity of the entity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a84fc43c322f66bf27ac6d90c328caf33}{\index{Entity@{Entity}!translate@{translate}}
+\index{translate@{translate}!Entity@{Entity}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::translate (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2}$<$ int $>$ const \&}]{shift}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a84fc43c322f66bf27ac6d90c328caf33}
+Shift the entity to a new position 
+\begin{DoxyParams}{Parameters}
+{\em shift} & how much to shift the entity by in pixels as a \hyperlink{classVector2}{Vector2} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a1124a22e501d751041e41036af568ce6}{\index{Entity@{Entity}!translate@{translate}}
+\index{translate@{translate}!Entity@{Entity}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::translate (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f} const \&}]{shift}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a1124a22e501d751041e41036af568ce6}
+Shift the entity to a new position 
+\begin{DoxyParams}{Parameters}
+{\em shift} & how much to shift the entity by in pixels as a \hyperlink{classVector2}{Vector2} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a7d7233e4e9a8d9557648aab4612f0f3b}{\index{Entity@{Entity}!translate@{translate}}
+\index{translate@{translate}!Entity@{Entity}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::translate (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a7d7233e4e9a8d9557648aab4612f0f3b}
+Shift the entity to a new position 
+\begin{DoxyParams}{Parameters}
+{\em x\-Shift} & how much to shift the entity in the x direction in pixels \\
+\hline
+{\em y\-Shift} & how much to shift the entity in the y direction in pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_a00b6eeaf99b35c8f8b10b5fbfc1baf4f}{\index{Entity@{Entity}!update@{update}}
+\index{update@{update}!Entity@{Entity}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEntity_a00b6eeaf99b35c8f8b10b5fbfc1baf4f}
+Update the entity's position and behavior 
+
+Reimplemented in \hyperlink{classRobotClass_a1d4d22f50854bf62af206d71f25c2a52}{Robot\-Class}, \hyperlink{classObstacle_a3fe041a93f5b2e9e5c5750bcef2382a4}{Obstacle}, and \hyperlink{classTarget_a33e3e447eeba8ded77cb3becf30f98d3}{Target}.
+
+\hypertarget{classEntity_a571c43e10649639994469f4229078fa0}{\index{Entity@{Entity}!wall\-Collide@{wall\-Collide}}
+\index{wall\-Collide@{wall\-Collide}!Entity@{Entity}}
+\subsubsection[{wall\-Collide}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-::wall\-Collide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntity_a571c43e10649639994469f4229078fa0}
+Called at every update to determine which wall(s) the entity is colliding with and adjust its orientation appropriately 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Entity/Entity.\-h\item 
+Entity/Entity.\-cpp\end{DoxyCompactItemize}

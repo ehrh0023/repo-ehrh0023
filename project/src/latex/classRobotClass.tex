@@ -1,0 +1,196 @@
+\hypertarget{classRobotClass}{\section{Robot\-Class Class Reference}
+\label{classRobotClass}\index{Robot\-Class@{Robot\-Class}}
+}
+
+
+The class for creating robots.  
+
+
+
+
+{\ttfamily \#include $<$Robot\-Class.\-h$>$}
+
+Inheritance diagram for Robot\-Class\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRobotClass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRobotClass_a66fe919002ecfe53bb9ad55d7caf2279}{Robot\-Class} (int pos\-X, int pos\-Y, int radius)
+\item 
+\hyperlink{classRobotClass_a339a2ae3a897461d74684a3d6eea7f44}{Robot\-Class} (\hyperlink{classVector2}{Vector2f} position, int radius)
+\item 
+void \hyperlink{classRobotClass_a1d4d22f50854bf62af206d71f25c2a52}{update} ()
+\item 
+void \hyperlink{classRobotClass_a739de3580edf634c29e1185364d96d32}{render} ()
+\item 
+void \hyperlink{classRobotClass_ab1fe4c11b2a955eaa637024e2491175d}{point\-At\-Target} ()
+\item 
+\hyperlink{classVector2}{Vector2f} \hyperlink{classRobotClass_a22775cc6158313ff74cda99310852211}{get\-Homing\-Info} ()
+\item 
+unsigned int \hyperlink{classRobotClass_ab34379c68e43d4cad881b5ba269d1826}{get\-Target\-I\-D} ()
+\item 
+void \hyperlink{classRobotClass_aba077e1da8fda4565fe177886459f0e7}{set\-Target\-I\-D} (unsigned int tar)
+\item 
+void \hyperlink{classRobotClass_a84067f1a5a37b6a7113032e08daad9f2}{on\-Collide} (\hyperlink{classEntity}{Entity} $\ast$other\-Entity)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRobotClass_a240d6890688ff265502af1df8c19d551}{unsigned int {\bfseries target\-I\-D}}\label{classRobotClass_a240d6890688ff265502af1df8c19d551}
+
+\item 
+\hypertarget{classRobotClass_ae7d8b6da658cce513a960fc5041caaa9}{bool {\bfseries has\-Collided}}\label{classRobotClass_ae7d8b6da658cce513a960fc5041caaa9}
+
+\item 
+\hypertarget{classRobotClass_a56875389d1869036213e14f1cf7ed200}{bool {\bfseries colliding}}\label{classRobotClass_a56875389d1869036213e14f1cf7ed200}
+
+\item 
+\hypertarget{classRobotClass_ab649e63e502af7a6b7f02f7648e73170}{bool {\bfseries collision\-Color\-Delay}}\label{classRobotClass_ab649e63e502af7a6b7f02f7648e73170}
+
+\item 
+\hypertarget{classRobotClass_a159535ed4c75e979ac89dfa7a6f7aa52}{\hyperlink{classColor}{Color} {\bfseries rgb}}\label{classRobotClass_a159535ed4c75e979ac89dfa7a6f7aa52}
+
+\item 
+\hypertarget{classRobotClass_a1e77b5b40fae63438d414e0af11c3ba4}{int {\bfseries collide\-Path\-Count}}\label{classRobotClass_a1e77b5b40fae63438d414e0af11c3ba4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class for creating robots. 
+
+\begin{DoxyAuthor}{Author}
+Dennis Ehrhardt 
+
+Evan Stuempfig 
+
+Andrew Hartfiel 
+
+David Tran 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRobotClass_a66fe919002ecfe53bb9ad55d7caf2279}{\index{Robot\-Class@{Robot\-Class}!Robot\-Class@{Robot\-Class}}
+\index{Robot\-Class@{Robot\-Class}!RobotClass@{Robot\-Class}}
+\subsubsection[{Robot\-Class}]{\setlength{\rightskip}{0pt plus 5cm}Robot\-Class\-::\-Robot\-Class (
+\begin{DoxyParamCaption}
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRobotClass_a66fe919002ecfe53bb9ad55d7caf2279}
+This constructor requires three parameters\-: x position, y position, and radius. 
+\begin{DoxyParams}{Parameters}
+{\em pos\-X} & the x position in pixels \\
+\hline
+{\em pos\-Y} & the y position in pixels \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRobotClass_a339a2ae3a897461d74684a3d6eea7f44}{\index{Robot\-Class@{Robot\-Class}!Robot\-Class@{Robot\-Class}}
+\index{Robot\-Class@{Robot\-Class}!RobotClass@{Robot\-Class}}
+\subsubsection[{Robot\-Class}]{\setlength{\rightskip}{0pt plus 5cm}Robot\-Class\-::\-Robot\-Class (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector2f}}]{position, }
+\item[{int}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRobotClass_a339a2ae3a897461d74684a3d6eea7f44}
+This constructor requires two parameters\-: location and radius. 
+\begin{DoxyParams}{Parameters}
+{\em location} & the x and y position in pixels as a \hyperlink{classVector2}{Vector2} \\
+\hline
+{\em radius} & the radius in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRobotClass_a22775cc6158313ff74cda99310852211}{\index{Robot\-Class@{Robot\-Class}!get\-Homing\-Info@{get\-Homing\-Info}}
+\index{get\-Homing\-Info@{get\-Homing\-Info}!RobotClass@{Robot\-Class}}
+\subsubsection[{get\-Homing\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} Robot\-Class\-::get\-Homing\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobotClass_a22775cc6158313ff74cda99310852211}
+Gets the distance and direction to target \begin{DoxyReturn}{Returns}
+Homing information 
+\end{DoxyReturn}
+\hypertarget{classRobotClass_ab34379c68e43d4cad881b5ba269d1826}{\index{Robot\-Class@{Robot\-Class}!get\-Target\-I\-D@{get\-Target\-I\-D}}
+\index{get\-Target\-I\-D@{get\-Target\-I\-D}!RobotClass@{Robot\-Class}}
+\subsubsection[{get\-Target\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Robot\-Class\-::get\-Target\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobotClass_ab34379c68e43d4cad881b5ba269d1826}
+Get the target I\-D \begin{DoxyReturn}{Returns}
+\hyperlink{classTarget}{Target} I\-D 
+\end{DoxyReturn}
+\hypertarget{classRobotClass_a84067f1a5a37b6a7113032e08daad9f2}{\index{Robot\-Class@{Robot\-Class}!on\-Collide@{on\-Collide}}
+\index{on\-Collide@{on\-Collide}!RobotClass@{Robot\-Class}}
+\subsubsection[{on\-Collide}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-Class\-::on\-Collide (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{other\-Entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRobotClass_a84067f1a5a37b6a7113032e08daad9f2}
+Called when this entity collides with another 
+\begin{DoxyParams}{Parameters}
+{\em other\-Entity} & the other entity \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classEntity_a8e8ddac9be28d59f187a51e0fca0f056}{Entity}.
+
+\hypertarget{classRobotClass_ab1fe4c11b2a955eaa637024e2491175d}{\index{Robot\-Class@{Robot\-Class}!point\-At\-Target@{point\-At\-Target}}
+\index{point\-At\-Target@{point\-At\-Target}!RobotClass@{Robot\-Class}}
+\subsubsection[{point\-At\-Target}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-Class\-::point\-At\-Target (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobotClass_ab1fe4c11b2a955eaa637024e2491175d}
+Point the robot at the target \hypertarget{classRobotClass_a739de3580edf634c29e1185364d96d32}{\index{Robot\-Class@{Robot\-Class}!render@{render}}
+\index{render@{render}!RobotClass@{Robot\-Class}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-Class\-::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRobotClass_a739de3580edf634c29e1185364d96d32}
+Draw the robot on the screen 
+
+Reimplemented from \hyperlink{classEntity_af5ca41372ff108e4c044e8d927995a27}{Entity}.
+
+\hypertarget{classRobotClass_aba077e1da8fda4565fe177886459f0e7}{\index{Robot\-Class@{Robot\-Class}!set\-Target\-I\-D@{set\-Target\-I\-D}}
+\index{set\-Target\-I\-D@{set\-Target\-I\-D}!RobotClass@{Robot\-Class}}
+\subsubsection[{set\-Target\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-Class\-::set\-Target\-I\-D (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{tar}
+\end{DoxyParamCaption}
+)}}\label{classRobotClass_aba077e1da8fda4565fe177886459f0e7}
+Set the target I\-D 
+\begin{DoxyParams}{Parameters}
+{\em tar} & change the robot's target (int) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRobotClass_a1d4d22f50854bf62af206d71f25c2a52}{\index{Robot\-Class@{Robot\-Class}!update@{update}}
+\index{update@{update}!RobotClass@{Robot\-Class}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-Class\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRobotClass_a1d4d22f50854bf62af206d71f25c2a52}
+Update the robot's position and behavior 
+
+Reimplemented from \hyperlink{classEntity_a00b6eeaf99b35c8f8b10b5fbfc1baf4f}{Entity}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Entity/Robot\-Class.\-h\item 
+Entity/Robot\-Class.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\hypertarget{classEntityManager}{\section{Entity\-Manager Class Reference}
+\label{classEntityManager}\index{Entity\-Manager@{Entity\-Manager}}
+}
+
+
+This class is used to manage entities.  
+
+
+
+
+{\ttfamily \#include $<$Entity\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEntityManager_abc6a2cc5077501f4b06d88f4ed3e7e31}{update} ()
+\item 
+void \hyperlink{classEntityManager_a663907dd48bbaf39344352a14b68d35a}{render} ()
+\item 
+void \hyperlink{classEntityManager_acc4cf521b2b9b33b37fd5685c2d1a504}{add} (\hyperlink{classEntity}{Entity} $\ast$)
+\item 
+void \hyperlink{classEntityManager_a322d6323d3d2b22581ca50efd1e253f5}{clear} ()
+\item 
+\hyperlink{classVector2}{Vector2f} \hyperlink{classEntityManager_a04a01dccea941da24815a4f58dd92a97}{homing\-Feedback} (int src, int dst)
+\item 
+unsigned int \hyperlink{classEntityManager_a2a13894e743374b43461f8586ab4880d}{get\-Entity\-I\-D} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+\hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classEntityManager_a2de0aa13460347a87b568a37cb0b11fc}{get\-Entity} (unsigned int id)
+\item 
+bool \hyperlink{classEntityManager_a68bec5ed352a62adc662166c0a09e5e8}{collide\-With\-Anything} (\hyperlink{classEntity}{Entity} $\ast$)
+\item 
+\hypertarget{classEntityManager_ad54b4992602323278fef716e20064554}{void {\bfseries collide} ()}\label{classEntityManager_ad54b4992602323278fef716e20064554}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classEntityManager_a6d87bc4ad44459500e6a754de4724d1d}{static \hyperlink{classEntityManager}{Entity\-Manager} \& {\bfseries get\-Instance} ()}\label{classEntityManager_a6d87bc4ad44459500e6a754de4724d1d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to manage entities. 
+
+\begin{DoxyNote}{Note}
+\hyperlink{classEntityManager}{Entity\-Manager} is a singleton class. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Dennis Ehrhardt 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEntityManager_acc4cf521b2b9b33b37fd5685c2d1a504}{\index{Entity\-Manager@{Entity\-Manager}!add@{add}}
+\index{add@{add}!EntityManager@{Entity\-Manager}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-Manager\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_acc4cf521b2b9b33b37fd5685c2d1a504}
+Add a new entity to the manager 
+\begin{DoxyParams}{Parameters}
+{\em new\-Entity} & the new entity to add \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntityManager_a322d6323d3d2b22581ca50efd1e253f5}{\index{Entity\-Manager@{Entity\-Manager}!clear@{clear}}
+\index{clear@{clear}!EntityManager@{Entity\-Manager}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-Manager\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_a322d6323d3d2b22581ca50efd1e253f5}
+Clear and delete all Entities in the Manager \hypertarget{classEntityManager_a68bec5ed352a62adc662166c0a09e5e8}{\index{Entity\-Manager@{Entity\-Manager}!collide\-With\-Anything@{collide\-With\-Anything}}
+\index{collide\-With\-Anything@{collide\-With\-Anything}!EntityManager@{Entity\-Manager}}
+\subsubsection[{collide\-With\-Anything}]{\setlength{\rightskip}{0pt plus 5cm}bool Entity\-Manager\-::collide\-With\-Anything (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_a68bec5ed352a62adc662166c0a09e5e8}
+Checks to see if the entity collides with anything 
+\begin{DoxyParams}{Parameters}
+{\em takes} & in an \hyperlink{classEntity}{Entity} to check if it collides with anything \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if it collides with another entity and false if it doesn't 
+\end{DoxyReturn}
+\hypertarget{classEntityManager_a2de0aa13460347a87b568a37cb0b11fc}{\index{Entity\-Manager@{Entity\-Manager}!get\-Entity@{get\-Entity}}
+\index{get\-Entity@{get\-Entity}!EntityManager@{Entity\-Manager}}
+\subsubsection[{get\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} $\ast$ Entity\-Manager\-::get\-Entity (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_a2de0aa13460347a87b568a37cb0b11fc}
+Gets the entity given an I\-D 
+\begin{DoxyParams}{Parameters}
+{\em id} & the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The entity, if it exists, N\-U\-L\-L if not (Entity$\ast$) 
+\end{DoxyReturn}
+\hypertarget{classEntityManager_a2a13894e743374b43461f8586ab4880d}{\index{Entity\-Manager@{Entity\-Manager}!get\-Entity\-I\-D@{get\-Entity\-I\-D}}
+\index{get\-Entity\-I\-D@{get\-Entity\-I\-D}!EntityManager@{Entity\-Manager}}
+\subsubsection[{get\-Entity\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Entity\-Manager\-::get\-Entity\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_a2a13894e743374b43461f8586ab4880d}
+Gets the I\-D of an entity 
+\begin{DoxyParams}{Parameters}
+{\em entity} & the entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The I\-D of the entity, if it exists, -\/1 if not (unsigned int) 
+\end{DoxyReturn}
+\hypertarget{classEntityManager_a04a01dccea941da24815a4f58dd92a97}{\index{Entity\-Manager@{Entity\-Manager}!homing\-Feedback@{homing\-Feedback}}
+\index{homing\-Feedback@{homing\-Feedback}!EntityManager@{Entity\-Manager}}
+\subsubsection[{homing\-Feedback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} Entity\-Manager\-::homing\-Feedback (
+\begin{DoxyParamCaption}
+\item[{int}]{src, }
+\item[{int}]{dst}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_a04a01dccea941da24815a4f58dd92a97}
+Get the direction and distance from one entity to another 
+\begin{DoxyParams}{Parameters}
+{\em src} & the I\-D of the source object \\
+\hline
+{\em dst} & the I\-D of the destination object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A the distance and direction (\hyperlink{classVector2}{Vector2}) 
+\end{DoxyReturn}
+\hypertarget{classEntityManager_a663907dd48bbaf39344352a14b68d35a}{\index{Entity\-Manager@{Entity\-Manager}!render@{render}}
+\index{render@{render}!EntityManager@{Entity\-Manager}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-Manager\-::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_a663907dd48bbaf39344352a14b68d35a}
+Draw all of the entities \hypertarget{classEntityManager_abc6a2cc5077501f4b06d88f4ed3e7e31}{\index{Entity\-Manager@{Entity\-Manager}!update@{update}}
+\index{update@{update}!EntityManager@{Entity\-Manager}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\-Manager\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEntityManager_abc6a2cc5077501f4b06d88f4ed3e7e31}
+Call the update method of all entities and run collisions 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Entity/Entity\-Manager.\-h\item 
+Entity/Entity\-Manager.\-cpp\end{DoxyCompactItemize}

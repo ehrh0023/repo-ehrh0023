@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['getblue',['getBlue',['../classColor.html#af80afc94fc75e299b6bf169339b8b67b',1,'Color']]],
+  ['getcolor',['getColor',['../classEntity.html#a9e60f2350275170500f33bcb8e57f3bc',1,'Entity']]],
+  ['getcurrenttime',['getCurrentTime',['../classClock.html#a7209991f330ee3d13557ac83ece52a5a',1,'Clock']]],
+  ['getdeltatime',['getDeltaTime',['../classClock.html#aa6bbd46f251a01c56f09ecfd89bcf324',1,'Clock']]],
+  ['getentity',['getEntity',['../classEntityManager.html#a2de0aa13460347a87b568a37cb0b11fc',1,'EntityManager']]],
+  ['getentityid',['getEntityID',['../classEntityManager.html#a2a13894e743374b43461f8586ab4880d',1,'EntityManager']]],
+  ['getgreen',['getGreen',['../classColor.html#ab36ffa09d7fe233397656a673e7243c7',1,'Color']]],
+  ['gethominginfo',['getHomingInfo',['../classRobotClass.html#a22775cc6158313ff74cda99310852211',1,'RobotClass']]],
+  ['getid',['getID',['../classEntity.html#a69bd5fbeece40ba87d1e6f693f41d9ff',1,'Entity']]],
+  ['getinstance',['getInstance',['../classClock.html#ab177004c1bc5df14899133b1e18c9bdb',1,'Clock']]],
+  ['getorientation',['getOrientation',['../classEntity.html#a899a2b90a1d7e26205095cad1d32a6d3',1,'Entity']]],
+  ['getposition',['getPosition',['../classEntity.html#ac45ad78fd8ef0d9938c1351798c181ab',1,'Entity']]],
+  ['getradius',['getRadius',['../classEntity.html#ac2f290a20927f548e8742976b222a556',1,'Entity']]],
+  ['getred',['getRed',['../classColor.html#a24d3bb135f529737210a158b9314798e',1,'Color']]],
+  ['getrotation',['getRotation',['../classEntity.html#a35d819a8e850200d9734dace476d602a',1,'Entity']]],
+  ['getspeed',['getSpeed',['../classEntity.html#ab9995764cb54c34e3715f7089a8e1714',1,'Entity']]],
+  ['gettargetid',['getTargetID',['../classRobotClass.html#ab34379c68e43d4cad881b5ba269d1826',1,'RobotClass']]],
+  ['getvelocity',['getVelocity',['../classEntity.html#a0217810f5096f6c0d04212d3cc1a935a',1,'Entity']]],
+  ['getwindowheight',['getWindowHeight',['../namespaceDrawing.html#ae71c3e98ec705d2fc14f87c41f082324',1,'Drawing']]],
+  ['getwindowwidth',['getWindowWidth',['../namespaceDrawing.html#aad23f577b63b549618750ebdad254ad3',1,'Drawing']]]
+];

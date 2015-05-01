@@ -1,0 +1,251 @@
+\hypertarget{classColor}{\section{Color Class Reference}
+\label{classColor}\index{Color@{Color}}
+}
+
+
+A Three float holder for colors to be cast as (R,G,B)  
+
+
+
+
+{\ttfamily \#include $<$Color.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{Color} ()
+\item 
+\hyperlink{classColor_af07af8fc1b1002d1d2db8f3d54ba28e9}{Color} (float input\-\_\-red, float input\-\_\-green, float input\-\_\-blue)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a268ca441e6c1780c77f5769d0713aede}{set\-Colors} (float input\-\_\-red, float input\-\_\-green, float input\-\_\-blue)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_aacd0b5d30356e51a1b57151cbe49fd57}{set\-Red} (float input\-\_\-red)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a1892a99de7cca54543b4dc954413f7f6}{set\-Green} (float input\-\_\-green)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_aa7fee41dde5551c88c68f91a7d5d15cb}{set\-Blue} (float input\-\_\-blue)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a2c287302d9a5f07a1dfd6b40f9ff10a4}{turn\-Red} ()
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a2087acc41f2e0a62b907a91c31fe4d2d}{turn\-Green} ()
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a27dedddac29c7915f3f2c1c262e903e3}{turn\-Blue} ()
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a85f91c5e08f43ef23de5d757b9c39b80}{turn\-Black} ()
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a5ba8f07e54bba3a0955be4f5eafc8318}{turn\-White} ()
+\item 
+float \hyperlink{classColor_a24d3bb135f529737210a158b9314798e}{get\-Red} ()
+\item 
+float \hyperlink{classColor_ab36ffa09d7fe233397656a673e7243c7}{get\-Green} ()
+\item 
+float \hyperlink{classColor_af80afc94fc75e299b6bf169339b8b67b}{get\-Blue} ()
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a13ba5d6a45983aa63b45796191b96452}{copy} (\hyperlink{classColor}{Color} base\-Color)
+\item 
+\hyperlink{classColor}{Color} \hyperlink{classColor_a5cf7ac372245ebd651c54093fd69679d}{inverse} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classColor_aa897fe858468c4bff0f286d0dfd43178}{float {\bfseries red}}\label{classColor_aa897fe858468c4bff0f286d0dfd43178}
+
+\item 
+\hypertarget{classColor_a7644dc2e2c23e40894929ce5127452a1}{float {\bfseries green}}\label{classColor_a7644dc2e2c23e40894929ce5127452a1}
+
+\item 
+\hypertarget{classColor_a175386a89265cede8f6ae694c32677c3}{float {\bfseries blue}}\label{classColor_a175386a89265cede8f6ae694c32677c3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Three float holder for colors to be cast as (R,G,B) 
+
+\begin{DoxyAuthor}{Author}
+David Tran 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{\index{Color@{Color}!Color@{Color}}
+\index{Color@{Color}!Color@{Color}}
+\subsubsection[{Color}]{\setlength{\rightskip}{0pt plus 5cm}Color\-::\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}
+Default constructor\-: sets color to white. \hypertarget{classColor_af07af8fc1b1002d1d2db8f3d54ba28e9}{\index{Color@{Color}!Color@{Color}}
+\index{Color@{Color}!Color@{Color}}
+\subsubsection[{Color}]{\setlength{\rightskip}{0pt plus 5cm}Color\-::\-Color (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-\_\-red, }
+\item[{float}]{input\-\_\-green, }
+\item[{float}]{input\-\_\-blue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classColor_af07af8fc1b1002d1d2db8f3d54ba28e9}
+Second constructor\-: allows manual setting of red, green, and blue, but within the boundaries of 0.\-0 and 1.\-0. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classColor_a13ba5d6a45983aa63b45796191b96452}{\index{Color@{Color}!copy@{copy}}
+\index{copy@{copy}!Color@{Color}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Color}}]{base\-Color}
+\end{DoxyParamCaption}
+)}}\label{classColor_a13ba5d6a45983aa63b45796191b96452}
+Change the current color of something to copy a different color. 
+\begin{DoxyParams}{Parameters}
+{\em base\-Color} & the color we wish to copy \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColor_af80afc94fc75e299b6bf169339b8b67b}{\index{Color@{Color}!get\-Blue@{get\-Blue}}
+\index{get\-Blue@{get\-Blue}!Color@{Color}}
+\subsubsection[{get\-Blue}]{\setlength{\rightskip}{0pt plus 5cm}float Color\-::get\-Blue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_af80afc94fc75e299b6bf169339b8b67b}
+Get the float value for blue \begin{DoxyReturn}{Returns}
+The blue value (float) 
+\end{DoxyReturn}
+\hypertarget{classColor_ab36ffa09d7fe233397656a673e7243c7}{\index{Color@{Color}!get\-Green@{get\-Green}}
+\index{get\-Green@{get\-Green}!Color@{Color}}
+\subsubsection[{get\-Green}]{\setlength{\rightskip}{0pt plus 5cm}float Color\-::get\-Green (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_ab36ffa09d7fe233397656a673e7243c7}
+Get the float value for green \begin{DoxyReturn}{Returns}
+The green value (float) 
+\end{DoxyReturn}
+\hypertarget{classColor_a24d3bb135f529737210a158b9314798e}{\index{Color@{Color}!get\-Red@{get\-Red}}
+\index{get\-Red@{get\-Red}!Color@{Color}}
+\subsubsection[{get\-Red}]{\setlength{\rightskip}{0pt plus 5cm}float Color\-::get\-Red (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a24d3bb135f529737210a158b9314798e}
+Get the float value for red \begin{DoxyReturn}{Returns}
+The red value (float) 
+\end{DoxyReturn}
+\hypertarget{classColor_a5cf7ac372245ebd651c54093fd69679d}{\index{Color@{Color}!inverse@{inverse}}
+\index{inverse@{inverse}!Color@{Color}}
+\subsubsection[{inverse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a5cf7ac372245ebd651c54093fd69679d}
+Returns the inverse of the current color \begin{DoxyReturn}{Returns}
+the inverse of the current color 
+\end{DoxyReturn}
+\hypertarget{classColor_aa7fee41dde5551c88c68f91a7d5d15cb}{\index{Color@{Color}!set\-Blue@{set\-Blue}}
+\index{set\-Blue@{set\-Blue}!Color@{Color}}
+\subsubsection[{set\-Blue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::set\-Blue (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-\_\-blue}
+\end{DoxyParamCaption}
+)}}\label{classColor_aa7fee41dde5551c88c68f91a7d5d15cb}
+Set the blue. 
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-blue} & the new blue value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColor_a268ca441e6c1780c77f5769d0713aede}{\index{Color@{Color}!set\-Colors@{set\-Colors}}
+\index{set\-Colors@{set\-Colors}!Color@{Color}}
+\subsubsection[{set\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::set\-Colors (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-\_\-red, }
+\item[{float}]{input\-\_\-green, }
+\item[{float}]{input\-\_\-blue}
+\end{DoxyParamCaption}
+)}}\label{classColor_a268ca441e6c1780c77f5769d0713aede}
+Set the red, green, and blue 
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-red} & the new red value \\
+\hline
+{\em input\-\_\-green} & the new green value \\
+\hline
+{\em input\-\_\-blue} & the new blue value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColor_a1892a99de7cca54543b4dc954413f7f6}{\index{Color@{Color}!set\-Green@{set\-Green}}
+\index{set\-Green@{set\-Green}!Color@{Color}}
+\subsubsection[{set\-Green}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::set\-Green (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-\_\-green}
+\end{DoxyParamCaption}
+)}}\label{classColor_a1892a99de7cca54543b4dc954413f7f6}
+Set the green. 
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-green} & the new green value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColor_aacd0b5d30356e51a1b57151cbe49fd57}{\index{Color@{Color}!set\-Red@{set\-Red}}
+\index{set\-Red@{set\-Red}!Color@{Color}}
+\subsubsection[{set\-Red}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::set\-Red (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-\_\-red}
+\end{DoxyParamCaption}
+)}}\label{classColor_aacd0b5d30356e51a1b57151cbe49fd57}
+Set the red. 
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-red} & the new red value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColor_a85f91c5e08f43ef23de5d757b9c39b80}{\index{Color@{Color}!turn\-Black@{turn\-Black}}
+\index{turn\-Black@{turn\-Black}!Color@{Color}}
+\subsubsection[{turn\-Black}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::turn\-Black (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a85f91c5e08f43ef23de5d757b9c39b80}
+Change the R\-G\-B so that this color set represents black. \begin{DoxyReturn}{Returns}
+The color black 
+\end{DoxyReturn}
+\hypertarget{classColor_a27dedddac29c7915f3f2c1c262e903e3}{\index{Color@{Color}!turn\-Blue@{turn\-Blue}}
+\index{turn\-Blue@{turn\-Blue}!Color@{Color}}
+\subsubsection[{turn\-Blue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::turn\-Blue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a27dedddac29c7915f3f2c1c262e903e3}
+Change the R\-G\-B so that this color set represents blue. \begin{DoxyReturn}{Returns}
+The color blue 
+\end{DoxyReturn}
+\hypertarget{classColor_a2087acc41f2e0a62b907a91c31fe4d2d}{\index{Color@{Color}!turn\-Green@{turn\-Green}}
+\index{turn\-Green@{turn\-Green}!Color@{Color}}
+\subsubsection[{turn\-Green}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::turn\-Green (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a2087acc41f2e0a62b907a91c31fe4d2d}
+Change the R\-G\-B so that this color set represents green. \begin{DoxyReturn}{Returns}
+The color green 
+\end{DoxyReturn}
+\hypertarget{classColor_a2c287302d9a5f07a1dfd6b40f9ff10a4}{\index{Color@{Color}!turn\-Red@{turn\-Red}}
+\index{turn\-Red@{turn\-Red}!Color@{Color}}
+\subsubsection[{turn\-Red}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::turn\-Red (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a2c287302d9a5f07a1dfd6b40f9ff10a4}
+Change the R\-G\-B so that this color set represents red. \begin{DoxyReturn}{Returns}
+The color red 
+\end{DoxyReturn}
+\hypertarget{classColor_a5ba8f07e54bba3a0955be4f5eafc8318}{\index{Color@{Color}!turn\-White@{turn\-White}}
+\index{turn\-White@{turn\-White}!Color@{Color}}
+\subsubsection[{turn\-White}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} Color\-::turn\-White (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColor_a5ba8f07e54bba3a0955be4f5eafc8318}
+Change the R\-G\-B so that this color set represents white. \begin{DoxyReturn}{Returns}
+The color white 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Color.\-h\item 
+Color.\-cpp\end{DoxyCompactItemize}
