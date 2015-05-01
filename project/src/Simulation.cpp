@@ -10,6 +10,12 @@
 
 bool paused = false;
 
+void start(int);
+void pause(int);
+void resume(int);
+void quit(int);
+void spawnEntities();
+
 Simulation::Simulation(int argc, char* argv[], int width, int height) 
 	: BaseGfxApp(argc, argv, width, height, 50, 50, GLUT_RGB|GLUT_DOUBLE|GLUT_DEPTH, true, 851, 50)
 {
@@ -18,11 +24,10 @@ Simulation::Simulation(int argc, char* argv[], int width, int height)
     //creates a basic UI panel with quit button
 	GLUI_Panel *toolPanel = new GLUI_Panel(m_glui, "Control Panel");
     new GLUI_Button(m_glui, "Quit", UI_QUIT, (GLUI_Update_CB)exit);
-#ifndef WIN32
-    new GLUI_Button(m_glui, "Start", UI_START, (GLUI_Update_CB)&Simulation::start);
-    new GLUI_Button(m_glui, "Pause", UI_PAUSE, (GLUI_Update_CB)&Simulation::pause);
-    new GLUI_Button(m_glui, "Resume", UI_RESUME, (GLUI_Update_CB)&Simulation::resume);
-#endif
+    new GLUI_Button(m_glui, "Start", UI_START, (GLUI_Update_CB)start);
+    new GLUI_Button(m_glui, "Pause", UI_PAUSE, (GLUI_Update_CB)pause);
+    new GLUI_Button(m_glui, "Resume", UI_RESUME, (GLUI_Update_CB)resume);
+
 
     // Initialize OpenGL
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f );
@@ -99,7 +104,7 @@ void Simulation::update()
 }
 
 // Author:
-void Simulation::start(int i)
+void start(int i)
 {
 	EntityManager::getInstance().clear();
 	spawnEntities();
@@ -107,18 +112,18 @@ void Simulation::start(int i)
 }
 
 // Author: Andrew Hartfiel
-void Simulation::pause(int i)
+void pause(int i)
 {
 	paused = true;
 }
 
 // Author: Andrew Hartfiel
-void Simulation::resume(int i)
+void resume(int i)
 {
 	paused = false;
 }
 
-void Simulation::spawnEntities()
+void spawnEntities()
 {
 	const int borderFudge = 70;
 	const int maxRadiusAddition = 60; //Added on top of the minimum radius to form a 100 max radius.
