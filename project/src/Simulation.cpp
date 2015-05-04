@@ -1,6 +1,7 @@
 #include "Simulation.h"
 #include "Entity/Obstacle.h"
 #include "Entity/Paddle.h"
+#include "Entity/Ball.h"
 #include "Entity/EntityManager.h"
 #include "Clock.h"
 #include "Keyboard.h"
@@ -136,40 +137,20 @@ void resume(int i)
 
 void spawnEntities()
 {
-	const int borderFudge = 70;
-	const int maxRadiusAddition = 60; //Added on top of the minimum radius to form a 100 max radius.
-	const int minRadius = 35;
-
-	// make obstacle 1
-	for (int i = 0; i < 0; i++)
-	{
-		int radius = 16;
-		int xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
-		int ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-		Obstacle* obstacle = new Obstacle(xpos, ypos, radius, radius);
-		while (EntityManager::getInstance().collideWithAnything(obstacle))
-		{
-			xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
-			ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-			obstacle->setPosition(Vector2<float>(xpos, ypos));
-		}
-		obstacle->setSpeed(30);
-
-		float r = Mathf::randf(.7, 1.0);
-		float g = Mathf::randf(.7, 1.0);
-		float b = Mathf::randf(0, .4);
-		obstacle->setColor(Color(r, g, b));
-
-		EntityManager::getInstance().add(obstacle);
-	}
+	Ball* ball = new Ball(Drawing::getWindowWidth() >> 1, Drawing::getWindowHeight() >> 1, 40, 40);
+	EntityManager::getInstance().add(ball);
+	ball->setSpeed(200);
+	ball->setColor(Color(1, 1, 1));
 
 	Controls controls1('w', 's');
-	Paddle* paddle = new Paddle(80, Drawing::getWindowHeight() >> 1, 50, 50, controls1);
+	Paddle* paddle = new Paddle(40, Drawing::getWindowHeight() >> 1, 40, 120, controls1);
 	EntityManager::getInstance().add(paddle);
-	paddle->setSpeed(80);
+	paddle->setSpeed(200);
+	paddle->setColor(Color(1, 1, 1));
 
 	Controls controls2('i', 'k');
-	paddle = new Paddle(Drawing::getWindowWidth() - 100, Drawing::getWindowHeight() >> 1, 50, 50, controls2);
+	paddle = new Paddle(Drawing::getWindowWidth() - 80, Drawing::getWindowHeight() >> 1, 40, 120, controls2);
 	EntityManager::getInstance().add(paddle);
-	paddle->setSpeed(80);
+	paddle->setSpeed(200);
+	paddle->setColor(Color(1, 1, 1));
 }

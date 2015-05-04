@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../Drawing.h"
 #include "../Color.h"
+#include "../AABBCollider.h"
 
 const Vector2f stdVect(1, 0);
 
@@ -13,7 +14,8 @@ Entity::Entity(int posX, int posY, int width, int height):
 	body(posX, posY, width, height),
 	setForDeletion(false),
 	orientation(stdVect),
-	rotation(0)
+	rotation(0),
+	collider(new AABBCollider(body, this))
 {
 }
 
@@ -23,8 +25,8 @@ Entity::Entity(Vector2f vectorIn, int width, int height) :
 	body(vectorIn, width, height),
 	setForDeletion(false),
 	orientation(stdVect),
-	rotation(0)
-	//wallCollideCount(0)
+	rotation(0),
+	collider(new AABBCollider(body, this))
 {
 
 

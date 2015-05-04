@@ -11,7 +11,7 @@
 
 int main(int argc, char* argv[])
 {
-    Simulation *app = new Simulation(argc, argv,800,800);
+	Simulation *app = new Simulation(argc, argv, 1024, 640);
     app->runMainLoop();
 	exit(0);
 }

@@ -1,4 +1,8 @@
-#pragma once
+#ifndef ENTITY_H
+#ifndef COLLIDER_H
+#include "../Collider.h"
+#else
+#define ENTITY_H
 #include "../Rect.h"
 #include "../Vector2.h"
 #include "../Color.h"
@@ -25,7 +29,8 @@ protected:
 	Vector2f velocity;
 	unsigned int entityID;
 	bool setForDeletion;
-	Color rgb; 
+	Color rgb;
+	Collider* collider;
 	
 public:
 	/*! This constructor requires three parameters: x position, y position, and radius.
@@ -180,3 +185,9 @@ private:
 	
 	friend class EntityManager;
 };
+
+
+#include "../Collider.h"
+
+#endif
+#endif
