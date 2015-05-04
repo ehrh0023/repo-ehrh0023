@@ -1,7 +1,6 @@
 #include "Simulation.h"
-#include "Entity/RobotClass.h"
 #include "Entity/Obstacle.h"
-#include "Entity/Target.h"
+#include "Entity/Paddle.h"
 #include "Entity/EntityManager.h"
 #include "Clock.h"
 #include "Keyboard.h"
@@ -141,47 +140,10 @@ void spawnEntities()
 	const int maxRadiusAddition = 60; //Added on top of the minimum radius to form a 100 max radius.
 	const int minRadius = 35;
 
-	// make robots
-	for (int i = 0; i < 2; i++)
-	{
-		int radius = 50;
-		int xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
-		int ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-		RobotClass* robot = new RobotClass(xpos, ypos, radius);
-		while (EntityManager::getInstance().collideWithAnything(robot))
-		{
-			xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
-			ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-			robot->setPosition(Vector2<float>(xpos, ypos));
-		}
-		robot->setSpeed(50);
-		float r = Mathf::randf(0, .4);
-		float g = Mathf::randf(.5, 1.0);
-		float b = Mathf::randf(0, .4);
-		robot->setColor(Color(r, g, b));
-		EntityManager::getInstance().add(robot);
-
-
-		radius = 40;
-		xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
-		ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-		Target* target = new Target(xpos, ypos, radius);
-		while (EntityManager::getInstance().collideWithAnything(target))
-		{
-			xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
-			ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-			target->setPosition(Vector2<float>(xpos, ypos));
-		}
-		target->setSpeed(30);
-		target->setColor(Color(r, b, g));
-		EntityManager::getInstance().add(target);
-		robot->setTargetID(target->getID());
-	}
-
 	// make obstacle 1
 	for (int i = 0; i < 6; i++)
 	{
-		int radius = rand() % maxRadiusAddition + minRadius;
+		int radius = 16;
 		int xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
 		int ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
 		Obstacle* obstacle = new Obstacle(xpos, ypos, radius);
@@ -200,4 +162,11 @@ void spawnEntities()
 
 		EntityManager::getInstance().add(obstacle);
 	}
+
+	Paddle* paddle = new Paddle(80, Drawing::getWindowHeight() >> 1, 50);
+	EntityManager::getInstance().add(paddle);
+	paddle->setSpeed(80);
+	paddle = new Paddle(Drawing::getWindowWidth() - 100, Drawing::getWindowHeight() >> 1, 50);
+	EntityManager::getInstance().add(paddle);
+	paddle->setSpeed(80);
 }
