@@ -1,4 +1,5 @@
 #pragma once
+#include "../Rect.h"
 #include "../Vector2.h"
 #include "../Color.h"
 #include "../Drawing.h"
@@ -17,8 +18,7 @@ class EntityManager;
 class Entity
 {
 protected:
-	Vector2f position;
-	int radius;
+	Rect body;
 	Vector2f orientation;
 	float rotation;
 	int speed;
@@ -26,7 +26,6 @@ protected:
 	unsigned int entityID;
 	bool setForDeletion;
 	Color rgb; 
-	//int wallCollideCount;
 	
 public:
 	/*! This constructor requires three parameters: x position, y position, and radius.
@@ -34,13 +33,13 @@ public:
 		\param posY the y position in pixels
 		\param radius the radius in pixels
 	*/
-	Entity(int posX, int posY, int radius);
+	Entity(int posX, int posY, int width, int height);
 
 	/*! This constructor requires two parameters: location and radius.
 		\param location the x and y position in pixels as a Vector2
 		\param radius the radius in pixels
 	*/
-	Entity(Vector2f, int radius);
+	Entity(Vector2f topleft, int width, int height);
 
 	virtual ~Entity() {}
 
@@ -143,16 +142,6 @@ public:
 	*/
 	bool boundsCheck();
 
-	/*! Get the radius of the entity in pixels
-		\return The radius (int)
-	*/
-	int getRadius() const;
-
-	/*! Set the radius of the entity in pixels
-		\param newRadius the new radius of the entity
-	*/
-	void setRadius(int);
-
 	/*! Get the ID of the entity
 	\return The ID (int)
 	*/
@@ -182,10 +171,6 @@ public:
 		\param otherEntity the other entity
 	*/
 	virtual void onCollide(Entity* otherEntity);
-
-	/*! Called at every update to determine which wall(s) the entity is colliding with and adjust its orientation appropriately
-	*/
-	void wallCollide();
 
 private:
 	/*! Give the entity an ID

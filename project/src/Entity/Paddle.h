@@ -19,8 +19,8 @@ public:
 		\param posY the y position in pixels
 		\param radius the radius in pixels
 	*/
-	Paddle(int posX, int posY, int radius) :
-		Entity(posX, posY, radius),
+	Paddle(int posX, int posY, int width, int height) :
+		Entity(posX, posY, width, height),
 		wanderRadius(50),
 		wanderDistance(0),
 		wanderJitter(1)
@@ -32,8 +32,8 @@ public:
 		\param location the x and y position in pixels as a Vector2
 		\param radius the radius in pixels
 	*/
-	Paddle(Vector2f position, int radius) :
-		Entity(position, radius), 
+	Paddle(Vector2f position, int width, int height) :
+		Entity(position, width, height), 
 		wanderRadius(50),
 		wanderDistance(0),
 		wanderJitter(1)

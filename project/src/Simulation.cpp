@@ -141,12 +141,12 @@ void spawnEntities()
 	const int minRadius = 35;
 
 	// make obstacle 1
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 0; i++)
 	{
 		int radius = 16;
 		int xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
 		int ypos = rand() % (glutGet(GLUT_WINDOW_HEIGHT) - 2 * radius - borderFudge) + radius;
-		Obstacle* obstacle = new Obstacle(xpos, ypos, radius);
+		Obstacle* obstacle = new Obstacle(xpos, ypos, radius, radius);
 		while (EntityManager::getInstance().collideWithAnything(obstacle))
 		{
 			xpos = rand() % (glutGet(GLUT_WINDOW_WIDTH) - 2 * radius) + radius;
@@ -163,10 +163,10 @@ void spawnEntities()
 		EntityManager::getInstance().add(obstacle);
 	}
 
-	Paddle* paddle = new Paddle(80, Drawing::getWindowHeight() >> 1, 50);
+	Paddle* paddle = new Paddle(80, Drawing::getWindowHeight() >> 1, 50, 50);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(80);
-	paddle = new Paddle(Drawing::getWindowWidth() - 100, Drawing::getWindowHeight() >> 1, 50);
+	paddle = new Paddle(Drawing::getWindowWidth() - 100, Drawing::getWindowHeight() >> 1, 50, 50);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(80);
 }

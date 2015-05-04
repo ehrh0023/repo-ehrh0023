@@ -33,6 +33,17 @@ namespace Drawing{
 		glEnd();
 	}
 
+	void drawRectangle(Rect& rectangle, Color color)
+	{
+		glColor3f(color.getRed(), color.getGreen(), color.getBlue()); // sets color to black.
+		glBegin(GL_QUADS);
+			glVertex2f(rectangle.getLeft(), rectangle.getTop()); // vertex 1
+			glVertex2f(rectangle.getRight(), rectangle.getTop()); // vertex 2
+			glVertex2f(rectangle.getRight(), rectangle.getBottom()); // vertex 3
+			glVertex2f(rectangle.getLeft(), rectangle.getBottom()); // vertex 4
+		glEnd();
+	}
+
 	// Author: Dennis Ehrhardt
 	int getWindowWidth()
 	{

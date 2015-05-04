@@ -9,22 +9,19 @@ const Vector2f stdVect(1, 0);
 
 // Author: Dennis Ehrhardt
 // Constructor for x and y coordinates and radius
-Entity::Entity(int posX, int posY, int radiusIn):
-	position(Vector2f(posX, posY)),
+Entity::Entity(int posX, int posY, int width, int height):
+	body(posX, posY, width, height),
 	setForDeletion(false),
-	radius(radiusIn),
 	orientation(stdVect),
 	rotation(0)
-	//wallCollideCount(0)
 {
 }
 
 // Author: Dennis Ehrhardt
 // Constructor for Vector2 position instance and radius
-Entity::Entity(Vector2f vectorIn, int radiusIn):
-	position(vectorIn),
+Entity::Entity(Vector2f vectorIn, int width, int height) :
+	body(vectorIn, width, height),
 	setForDeletion(false),
-	radius(radiusIn),
 	orientation(stdVect),
 	rotation(0)
 	//wallCollideCount(0)
@@ -38,41 +35,42 @@ Entity::Entity(Vector2f vectorIn, int radiusIn):
 // Will perform other tasks as well in the future.
 void Entity::update() 
 {
-	// This code, along with other commented-out sections, is for a potential improved collision system if it proves useful in future iterations
-	//if (wallCollideCount > 0)
-	//{
-	//	wallCollideCount --;
-	//}
 }
 
 // Author: Dennis Ehrhardt
 // Displays the entity in the output window
 void Entity::render() 
 {	
-	Drawing::drawCircle(position, radius, rgb);
+	Drawing::drawRectangle(body, rgb);
 }
 
 // Author: Andrew Hartfiel
 // Translate by an integer Vector2
 void Entity::translate(Vector2<int> const& shift)
 {
+	Vector2f position = body.getTopLeft();
 	position.x += shift.x;
 	position.y += shift.y;
+	body.setTopLeft(position);
 }
 
 // Author: Andrew Hartfiel
 // Translate by a float Vector2
 void Entity::translate(Vector2f const& shift)
 {
+	Vector2f position = body.getTopLeft();
 	position += shift;
+	body.setTopLeft(position);
 }
 
 // Author: Andrew Hartfiel
 // Translate by x and y integers
 void Entity::translate(int x, int y)
 {
+	Vector2f position = body.getTopLeft();
 	position.x += x;
 	position.y += y;
+	body.setTopLeft(position);
 }
 
 // Author: Andrew Hartfiel
@@ -116,14 +114,14 @@ void Entity::rotateRad(float angle)
 // Returns position Vector2 of entity
 Vector2f Entity::getPosition() const
 {
-	return position;
+	return body.getCenter();
 }
 
 // Author: Evan Stuempfig
 // Assigns supplied Vector2 to position
 void Entity::setPosition(Vector2f const& newPosition)
 {
-	position = newPosition;
+	body.setCenter(newPosition);
 }
 
 // Author: Andrew Hartfiel
@@ -207,16 +205,7 @@ void Entity::setVelocity(Vector2f const& newVelocity)
 // A shared point along the circumference of both entities counts as a collision
 bool Entity::collide(Entity* otherEntity)
 {
-	float combinedRadius = radius + otherEntity->radius;
-	float distanceSqr = position.lengthSquared(otherEntity->position);
-	if (distanceSqr <= combinedRadius*combinedRadius)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}	
+	return body.overlaps(otherEntity->body);
 }
 
 // Author: David Tran
@@ -225,71 +214,25 @@ bool Entity::collide(Entity* otherEntity)
 bool Entity::boundsCheck() 
 {
 	return (
-		((position.x - radius) >= 0) &&
-		((position.x + radius) <= 800) &&
-		((position.y - radius) >= 0) &&
-		((position.y + radius) <= 800));
+		(body.getLeft() >= 0) &&
+		(body.getRight() <= Drawing::getWindowWidth()) &&
+		(body.getBottom() >= 0) &&
+		(body.getTop() <= Drawing::getWindowHeight()));
 }
 
 // Author: Dennis Ehrhardt
 // Default onCollide function, in which objects deflect at approximately their angle of incidence
 void Entity::onCollide(Entity* otherEntity) 
 {
+	/*
 	const float PI = 3.14159265359;
 	Vector2f colOrientation = (position - otherEntity->position).normalize();
 	float combinedRadius = radius + otherEntity->radius + 1;
 	setPosition(colOrientation * combinedRadius + otherEntity->position);
 	float twoangle = 2* colOrientation.angle(orientation);
 	rotateRad(PI + twoangle);
+	*/
 }
-
-// Author: Evan Stuempfig
-// Determines which wall is collided with, if any, and adjusts position and orientation appropriately
-void Entity::wallCollide() 
-{
-
-	//const float PI = 3.14159265359;
-
-	if ((position.x - radius) < 0)
-	{
-		setPosition(Vector2f(radius, position.y));
-		setOrientation(Vector2f(-1 * orientation.x, orientation.y));
-		//wallCollideCount = 300;
-	}
-	else if ((position.x + radius) > 800)
-	{
-		setPosition(Vector2f(800 - radius, position.y));
-		setOrientation(Vector2f(-1 * orientation.x, orientation.y));
-		//wallCollideCount = 300;
-	}
-	else if ((position.y - radius) < 0) 
-	{
-		setPosition(Vector2f(position.x, radius));
-		setOrientation(Vector2f(orientation.x, -1 * orientation.y));
-		//wallCollideCount = 300;
-	}
-	else if ((position.y + radius) > 800)
-	{
-		setPosition(Vector2f(position.x, 800 - radius));
-		setOrientation(Vector2f(orientation.x, -1 * orientation.y));
-		//wallCollideCount = 300;
-	}
-}
-
-// Author: David Tran
-// Returns radius integer
-int Entity::getRadius() const
-{
-	return radius;
-}
-
-// Author: David Tran
-// Sets radius
-void Entity::setRadius(int newRadius)
-{
-	radius = newRadius;
-}
-
 
 // Author: Dennis Ehrhardt
 // Gets ID

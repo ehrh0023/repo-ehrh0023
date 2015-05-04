@@ -1,5 +1,6 @@
 #include "Color.h"
 #include "Vector2.h"
+#include "Rect.h"
 
 /*! This namespace holds the drawing functions for rendering the entities. */
 namespace Drawing
@@ -18,6 +19,12 @@ namespace Drawing
 	\param lineWidth  (optional) the width of the line (float)
 	*/
 	void drawLine(Vector2f start, Vector2f end, Color color, float lineWidth);
+
+	/*! Draw a rectangle
+		\param the rectangle to be drawn (Rect&)
+		\param color the color of the rectangle (Color)
+	*/
+	void drawRectangle(Rect& rectangle, Color color);
 
 	/*! Get the window width
 		\return The window width (int)

@@ -137,7 +137,7 @@ void EntityManager::collide()
 					}
 				}
 			}
-			entities[i]->wallCollide();
+//			entities[i]->wallCollide();
 		}
 	}
 }
