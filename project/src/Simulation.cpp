@@ -163,10 +163,13 @@ void spawnEntities()
 		EntityManager::getInstance().add(obstacle);
 	}
 
-	Paddle* paddle = new Paddle(80, Drawing::getWindowHeight() >> 1, 50, 50);
+	Controls controls1('w', 's');
+	Paddle* paddle = new Paddle(80, Drawing::getWindowHeight() >> 1, 50, 50, controls1);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(80);
-	paddle = new Paddle(Drawing::getWindowWidth() - 100, Drawing::getWindowHeight() >> 1, 50, 50);
+
+	Controls controls2('i', 'k');
+	paddle = new Paddle(Drawing::getWindowWidth() - 100, Drawing::getWindowHeight() >> 1, 50, 50, controls2);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(80);
 }

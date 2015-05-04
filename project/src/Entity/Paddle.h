@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "../Controls.h"
 
 /*! 
 	\brief The class for creating Paddles
@@ -8,6 +9,7 @@
 class Paddle : public Entity
 {
 	Vector2f wanderTarget;
+	Controls controls;
 
 	const float wanderRadius;
 	const float wanderDistance;
@@ -19,11 +21,12 @@ public:
 		\param posY the y position in pixels
 		\param radius the radius in pixels
 	*/
-	Paddle(int posX, int posY, int width, int height) :
+	Paddle(int posX, int posY, int width, int height, Controls cntl) :
 		Entity(posX, posY, width, height),
 		wanderRadius(50),
 		wanderDistance(0),
-		wanderJitter(1)
+		wanderJitter(1),
+		controls(cntl)
 	{
 		rgb = Color(1.0f,1.0f,0.0f);
 	}
@@ -32,11 +35,12 @@ public:
 		\param location the x and y position in pixels as a Vector2
 		\param radius the radius in pixels
 	*/
-	Paddle(Vector2f position, int width, int height) :
+	Paddle(Vector2f position, int width, int height, Controls cntl) :
 		Entity(position, width, height), 
 		wanderRadius(50),
 		wanderDistance(0),
-		wanderJitter(1)
+		wanderJitter(1),
+		controls(cntl)
 	{
 		rgb = Color(1.0f,1.0f,0.0f);
 	}

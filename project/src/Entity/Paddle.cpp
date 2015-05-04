@@ -8,11 +8,11 @@
 void Paddle::update()
 {
 	System::Keyboard keyboard = System::Keyboard::getInstance();
-	if (keyboard.keyHeld('w') || keyboard.keyHeld('W'))
+	if (keyboard.keyHeld(controls.up))
 	{
 		translate(Vector2f(0, 1) * speed * Clock::getInstance().getDeltaTime());
 	}
-	if (keyboard.keyHeld('s') || keyboard.keyHeld('S'))
+	if (keyboard.keyHeld(controls.down))
 	{
 		translate(Vector2f(0, -1) * speed * Clock::getInstance().getDeltaTime());
 	}
