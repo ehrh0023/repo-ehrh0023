@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include <iostream>
 
 class Ball : public Entity
 {
@@ -8,6 +9,7 @@ public:
 		Entity(posX, posY, width, height)
 	{
 		rgb = Color(1.0f, 1.0f, 0.0f);
+		setOrientation(Vector2f(.6, .3));
 	}
 
 
@@ -15,6 +17,7 @@ public:
 		Entity(position, width, height)
 	{
 		rgb = Color(1.0f, 1.0f, 0.0f);
+		setOrientation(Vector2f(.6, .3));
 	}
 
 	/*! Update the balls's position and behavior */
@@ -22,4 +25,7 @@ public:
 
 	/*! Draw the ball on the screen */
 	void render();
+
+	void onCollideLeft();
+	void onCollideRight();
 };

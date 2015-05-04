@@ -28,8 +28,6 @@ Entity::Entity(Vector2f vectorIn, int width, int height) :
 	rotation(0),
 	collider(new AABBCollider(body, this))
 {
-
-
 } 
 
 // Author: Evan Stuempfig
@@ -205,9 +203,9 @@ void Entity::setVelocity(Vector2f const& newVelocity)
 // Compares the positions of entity to the entity supplied, returning true if there is a collision and false otherwise
 // Assumes both entities are circles, which is the case for all entities at this point
 // A shared point along the circumference of both entities counts as a collision
-bool Entity::collide(Entity* otherEntity)
+void Entity::collide(Entity* otherEntity)
 {
-	return body.overlaps(otherEntity->body);
+	collider->collide(otherEntity->collider);
 }
 
 // Author: David Tran

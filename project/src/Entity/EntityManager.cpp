@@ -129,15 +129,10 @@ void EntityManager::collide()
 			{
 				if (entities[j] != NULL)
 				{
-					//std::cout << "Collision detected";
-					if (entities[i]->collide(entities[j]))
-					{
-						entities[i]->onCollide(entities[j]);
-						entities[j]->onCollide(entities[i]);
-					}
+					entities[i]->collide(entities[j]);
+					entities[j]->collide(entities[i]);
 				}
 			}
-//s			entities[i]->wallCollide();
 		}
 	}
 }
@@ -148,7 +143,7 @@ bool EntityManager::collideWithAnything(Entity* entity)
 {
 	for (unsigned int i = 0; i < entities.size(); i++)
 	{
-		if (entities[i] != NULL && entity != entities[i] && entity->collide(entities[i]))
+		if (entities[i] != NULL && entity != entities[i] && entity->body.overlaps(entities[i]->body))
 		{
 			return true;
 		}

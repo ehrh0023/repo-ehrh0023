@@ -42,7 +42,7 @@ float Rect::getTop() const
 }
 float Rect::getBottom() const
 {
-	return position.y + height;
+	return position.y - height;
 }
 float Rect::getLeft() const
 {
@@ -76,7 +76,7 @@ Vector2f Rect::getCenter() const
 
 Vector2f Rect::setCenter(Vector2f const& center)
 {
-	position = center - Vector2f(width/2, height/2);
+	position = center + Vector2f(-width/2, height/2);
 	return center;
 }
 
@@ -87,8 +87,8 @@ bool Rect::containsPoint(Vector2f)
 
 bool Rect::overlaps(Rect const& otherRect)
 {
-	if ((getBottom() > otherRect.getTop()) &&
-		(getTop() < otherRect.getBottom()) &&
+	if ((getBottom() < otherRect.getTop()) &&
+		(getTop() > otherRect.getBottom()) &&
 		(getRight() > otherRect.getLeft()) &&
 		(getLeft() < otherRect.getRight())) 
 	{ 
@@ -103,12 +103,12 @@ bool Rect::overlaps(Rect const& otherRect)
 
 Vector2f Rect::getBottomRight() const
 {
-	return Vector2f(position.x + width, position.y + height);
+	return Vector2f(position.x + width, position.y - height);
 }
 
 Vector2f Rect::setBottomRight(Vector2f const& bottomRight)
 {
-	position = Vector2f(bottomRight.x - width, bottomRight.y - height);
+	position = Vector2f(bottomRight.x - width, bottomRight.y + height);
 	return bottomRight;
 }
 
@@ -130,7 +130,7 @@ float Rect::setTop(float top)
 
 float Rect::setBottom(float bottom)
 {
-	position.y = bottom - height;
+	position.y = bottom + height;
 	return bottom;
 }
 

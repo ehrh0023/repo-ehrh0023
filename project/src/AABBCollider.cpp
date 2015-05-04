@@ -54,62 +54,63 @@ void AABBCollider::AABBCollision(AABBCollider* col)
 	float left2 = col->box.getLeft();
 	float right1 = box.getRight();
 	float right2 = col->box.getRight();
+	bool collided = false;
 
-	if ((bottom1 + 1 + velY> top2) &&
-		(top1 + velY < bottom2) &&
+	if ((bottom1 + 1 + velY < top2) &&
+		(top1 + velY > bottom2) &&
 		(right1 + velX > left2) &&
 		(left1 + velX < right2) &&
 		bottom1 <= top2) 
 	{ 
 		if (velY >= 0) 
 		{
-			//if(parent != NULL)
-			//	parent->onCollideDown();
+			if(parent != NULL)
+				parent->onCollideDown();
 			box.setBottom(top2);
 			collideDown = true;
 		}
 	}
 	
-	if ((bottom1 + velY > top2) &&
-		(top1 - 1 + velY < bottom2) &&
+	if ((bottom1 + velY < top2) &&
+		(top1 - 1 + velY > bottom2) &&
 		(right1 + velX > left2) &&
 		(left1 + velX < right2) &&
 		top1 >= bottom2) 
 	{ 
 		if (velY <= 0) 
 		{
-			//if(parent != NULL)
-			//	parent->onCollideUp();
+			if(parent != NULL)
+				parent->onCollideUp();
 			box.setTop(bottom2);
 			collideUp = true;
 		}
 	}
 	
-	if ((bottom1 + velY > top2) &&
-		(top1 + velY < bottom2) &&
+	if ((bottom1 + velY < top2) &&
+		(top1 + velY > bottom2) &&
 		(right1 + 1 + velX > left2) &&
 		(left1 + velX < right2) &&
 		right1 <= left2) 
 	{ 
 		if (velX >= 0) 
 		{
-			//if(parent != NULL)
-			//	parent->onCollideRight();
+			if(parent != NULL)
+				parent->onCollideRight();
 			box.setRight(left2);
 			collideRight = true;
 		}
 	}
 	
-	if ((bottom1 + velY > top2) &&
-		(top1 + velY < bottom2) &&
+	if ((bottom1 + velY < top2) &&
+		(top1 + velY > bottom2) &&
 		(right1 + velX > left2) &&
 		(left1 - 1 + velX < right2) &&
 		left1 >= right2) 
 	{ 
 		if (velX <= 0) 
 		{
-			//if(parent != NULL)
-			//	parent->onCollideLeft();
+			if(parent != NULL)
+				parent->onCollideLeft();
 			box.setLeft(right2);
 			collideLeft = true;
 		}
