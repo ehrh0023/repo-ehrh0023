@@ -4,15 +4,8 @@
 
 void Ball::update()
 {
-	if (body.getTop() >= Drawing::getWindowHeight())
-		setOrientation(Vector2f(orientation.x, -.3));
-	else if (body.getBottom() < 0)
-		setOrientation(Vector2f(orientation.x, .3));
-
-
-	setSpeed(100);
-	velocity = orientation * speed * Clock::getInstance().getDeltaTime();
 	translate(velocity);
+	velocity = orientation * speed * Clock::getInstance().getDeltaTime();
 }
 
 void Ball::render()
@@ -24,10 +17,24 @@ void Ball::render()
 
 void Ball::onCollideLeft()
 {
-	setOrientation(Vector2f(.6, orientation.y));
+	Entity::onCollideLeft();
+	setOrientation(Vector2f(0.70710678118, orientation.y));
 }
 
 void Ball::onCollideRight()
 {
-	setOrientation(Vector2f(-.6, orientation.y));
+	Entity::onCollideRight();
+	setOrientation(Vector2f(-0.70710678118, orientation.y));
+}
+
+void Ball::onCollideDown()
+{
+	Entity::onCollideDown();
+	setOrientation(Vector2f(orientation.x, 0.70710678118));
+}
+
+void Ball::onCollideUp()
+{
+	Entity::onCollideUp();
+	setOrientation(Vector2f(orientation.x, -0.70710678118));
 }

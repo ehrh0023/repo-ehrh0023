@@ -44,6 +44,16 @@ namespace Drawing{
 		glEnd();
 	}
 
+	void drawText(Vector2f position, std::string s)
+	{
+		glColor3f(1.0f, 1.0f, 1.0f);
+		glRasterPos3f(position.x, position.y, 0); // location to start printing text
+		for (int i = 0; i < s.size(); i++) 
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
+		}
+	}
+
 	// Author: Dennis Ehrhardt
 	int getWindowWidth()
 	{

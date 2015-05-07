@@ -12,6 +12,8 @@ class EntityManager
 {
 private:
 	std::vector<Entity*> entities;
+	static int leftWins;
+	static int rightWins;
 
 public:
 	/* Entity Manager is a singleton class */

@@ -3,6 +3,10 @@
 #include <cstddef>
 #include <iostream>
 
+
+int EntityManager::leftWins = 0;
+int EntityManager::rightWins = 0;
+
 //Entity Manager is a singleton class
 // Author: Dennis Ehrhardt (all methods in EntityManager)
 EntityManager& EntityManager::getInstance()
@@ -14,8 +18,6 @@ EntityManager& EntityManager::getInstance()
 // Call the update method of all entities and run collisions
 void EntityManager::update()
 {
-	cull();
-	collide();
 	for (unsigned int i = 0; i < entities.size(); i++)
 	{
 		if(entities[i] != NULL)
@@ -23,6 +25,8 @@ void EntityManager::update()
 			entities[i]->update();
 		}
 	}
+	cull();
+	collide();
 }
 // Draw all of the entities
 void EntityManager::render()
@@ -34,6 +38,9 @@ void EntityManager::render()
 			entities[i]->render();
 		}
 	}
+
+	Vector2f v((Drawing::getWindowWidth() >> 1) + 20, Drawing::getWindowHeight() - 100);
+	Drawing::drawText(v, "Wins - " + rightWins);
 }
 // Add a new entity to the manager
 void EntityManager::add(Entity* entity)
@@ -133,6 +140,7 @@ void EntityManager::collide()
 					entities[j]->collide(entities[i]);
 				}
 			}
+			entities[i]->wallCollide();
 		}
 	}
 }

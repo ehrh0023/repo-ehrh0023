@@ -42,10 +42,6 @@ Simulation::Simulation(int argc, char* argv[], int width, int height)
     glViewport(0, 0, m_width, m_height);
 
 	srand(time(NULL));
-
-#ifdef WIN32
-	spawnEntities();
-#endif
 }
 
 void Simulation::gluiControl(int controlID)
@@ -57,12 +53,6 @@ void Simulation::display()
 {    
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-    // drawing commands go here!
-    // for example: a red rectangle
-    glColor3f(1.0f, 0.0f, 0.0f);
-    //glRecti(100, 100, 200, 200);
-
-    // or... a robot!
 	EntityManager::getInstance().render();
 
     // debugging messages
@@ -137,19 +127,19 @@ void resume(int i)
 
 void spawnEntities()
 {
-	Ball* ball = new Ball(Drawing::getWindowWidth() >> 1, Drawing::getWindowHeight() >> 1, 40, 40);
+	Ball* ball = new Ball(Drawing::getWindowWidth() >> 1, Drawing::getWindowHeight() >> 1, 20, 20);
 	EntityManager::getInstance().add(ball);
-	ball->setSpeed(200);
+	ball->setSpeed(300);
 	ball->setColor(Color(1, 1, 1));
 
 	Controls controls1('w', 's');
-	Paddle* paddle = new Paddle(40, Drawing::getWindowHeight() >> 1, 40, 120, controls1);
+	Paddle* paddle = new Paddle(20, Drawing::getWindowHeight() >> 1, 20, 120, controls1);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(200);
 	paddle->setColor(Color(1, 1, 1));
 
 	Controls controls2('i', 'k');
-	paddle = new Paddle(Drawing::getWindowWidth() - 80, Drawing::getWindowHeight() >> 1, 40, 120, controls2);
+	paddle = new Paddle(Drawing::getWindowWidth() - 60, Drawing::getWindowHeight() >> 1, 20, 120, controls2);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(200);
 	paddle->setColor(Color(1, 1, 1));

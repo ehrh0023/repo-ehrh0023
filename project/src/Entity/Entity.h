@@ -142,6 +142,8 @@ public:
 		*/
 	void collide(Entity* otherEntity);
 
+	void wallCollide();
+
 	/*! Check that the entity is within the bounds of the map if it is not in bounds, it is brought in bounds
 		\return False if out of bounds and brought back, True if originally in bounds
 		*/
@@ -178,10 +180,10 @@ public:
 	virtual void onCollide(Entity* otherEntity);
 
 
-	virtual void onCollideLeft() {}
-	virtual void onCollideRight() {}
-	virtual void onCollideDown() {}
-	virtual void onCollideUp() {}
+	virtual void onCollideLeft() { velocity.x = 0; }
+	virtual void onCollideRight() { velocity.x = 0; }
+	virtual void onCollideDown()  {velocity.y = 0; }
+	virtual void onCollideUp() { velocity.y = 0; }
 
 private:
 	/*! Give the entity an ID

@@ -29,9 +29,8 @@ public:
 	{
 	}
 
-	virtual void collide(Collider* col)
-	{
-	}
+	virtual void collide(Collider* col) = 0;
+	virtual void boundsCollide() = 0;
 
 	Collision::Type getType()
 	{
@@ -50,7 +49,7 @@ public:
 
 	virtual ~Collider() {}
 		
-	virtual void clearCollisionData() {}
+	virtual void clearCollisionData() = 0;
 };
 #endif
 

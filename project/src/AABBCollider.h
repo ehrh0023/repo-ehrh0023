@@ -14,6 +14,7 @@ public:
 	AABBCollider(Rect& body, Entity* p = NULL);
 
 	void collide(Collider* col);
+	void boundsCollide();
 	void AABBCollision(AABBCollider* col);
 
 	Collision::Type getType();

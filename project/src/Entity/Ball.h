@@ -9,7 +9,7 @@ public:
 		Entity(posX, posY, width, height)
 	{
 		rgb = Color(1.0f, 1.0f, 0.0f);
-		setOrientation(Vector2f(.6, .3));
+		setOrientation(Vector2f(0.70710678118, 0.70710678118));
 	}
 
 
@@ -17,7 +17,7 @@ public:
 		Entity(position, width, height)
 	{
 		rgb = Color(1.0f, 1.0f, 0.0f);
-		setOrientation(Vector2f(.6, .3));
+		setOrientation(Vector2f(0.70710678118, 0.70710678118));
 	}
 
 	/*! Update the balls's position and behavior */
@@ -28,4 +28,6 @@ public:
 
 	void onCollideLeft();
 	void onCollideRight();
+	void onCollideUp();
+	void onCollideDown();
 };

@@ -139,14 +139,14 @@ public:
 	Vector2 rotate(float);
 
 	/*! Returns the angle between two vectors
-	\param v the second vector
-	\returns the angle betweem two vectors from -PI to PI
+		\param v the second vector
+		\returns the angle betweem two vectors from -PI to PI
 	*/
 	float angle(Vector2<T> const& v)  const;
 
 	/*! Returns the magnitude of angle between two vectors
-	\param v the second vector
-	\returns the angle betweem two vectors from 0 to PI
+		\param v the second vector
+		\returns the angle betweem two vectors from 0 to PI
 	*/
 	float angleMagnitude(Vector2<T> const& v)  const;
 

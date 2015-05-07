@@ -1,6 +1,7 @@
 #include "Color.h"
 #include "Vector2.h"
 #include "Rect.h"
+#include <string>
 
 /*! This namespace holds the drawing functions for rendering the entities. */
 namespace Drawing
@@ -25,6 +26,9 @@ namespace Drawing
 		\param color the color of the rectangle (Color)
 	*/
 	void drawRectangle(Rect& rectangle, Color color);
+
+
+	void drawText(Vector2f position, std::string s);
 
 	/*! Get the window width
 		\return The window width (int)

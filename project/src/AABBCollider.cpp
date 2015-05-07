@@ -20,6 +20,52 @@ void AABBCollider::collide(Collider* col)
 	}
 }
 
+void AABBCollider::boundsCollide()
+{
+	float velX = 0;
+	float velY = 0;
+
+	if (parent != NULL)
+	{
+		velX = parent->getVelocity().x;
+		velY = parent->getVelocity().y;
+	}
+
+	if (box.getBottom() + velY < 0)
+	{
+		if (parent != NULL)
+			parent->onCollideDown();
+		box.setBottom(0);
+		collideDown = true;
+	}
+
+	if (box.getTop() + velY >= Drawing::getWindowHeight())
+	{
+		if (parent != NULL)
+			parent->onCollideUp();
+		box.setTop(Drawing::getWindowHeight() - 1);
+		collideUp = true;
+	}
+
+
+	if (box.getLeft() + velX < 0)
+	{
+		if (parent != NULL)
+			parent->onCollideLeft();
+		box.setLeft(0);
+		collideLeft = true;
+	}
+
+
+	if (box.getRight() + velY >= Drawing::getWindowWidth())
+	{
+		if (parent != NULL)
+			parent->onCollideRight();
+		box.setRight(Drawing::getWindowWidth() - 1);
+		collideRight = true;
+	}
+}
+
 Collision::Type AABBCollider::getType()
 {
 	return type;
@@ -54,8 +100,7 @@ void AABBCollider::AABBCollision(AABBCollider* col)
 	float left2 = col->box.getLeft();
 	float right1 = box.getRight();
 	float right2 = col->box.getRight();
-	bool collided = false;
-
+	/*
 	if ((bottom1 + 1 + velY < top2) &&
 		(top1 + velY > bottom2) &&
 		(right1 + velX > left2) &&
@@ -85,7 +130,7 @@ void AABBCollider::AABBCollision(AABBCollider* col)
 			collideUp = true;
 		}
 	}
-	
+	*/
 	if ((bottom1 + velY < top2) &&
 		(top1 + velY > bottom2) &&
 		(right1 + 1 + velX > left2) &&

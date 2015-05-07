@@ -208,6 +208,11 @@ void Entity::collide(Entity* otherEntity)
 	collider->collide(otherEntity->collider);
 }
 
+void Entity::wallCollide()
+{
+	collider->boundsCollide();
+}
+
 // Author: David Tran
 // Checks whether entity is within bounds of window, returning true if its position is valid and false otherwise
 // Window size is hardcoded for now, but may be changeable in future iterations
