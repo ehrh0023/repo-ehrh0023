@@ -67,7 +67,7 @@ endif
 ##
 # Sets up the /bin folder, checks for all cpp files, and compiles the executable
 ##
-all: setup testEntity testRobotClass $(SOURCES) $(EXECUTABLE)
+all: setup $(SOURCES) $(EXECUTABLE)
 
 setup:
 	mkdir -p ../bin
@@ -100,35 +100,3 @@ clean:
 
 $(GLUI):
 	$(MAKE) -C ../lib/$(GLUI) all
-
-##
-# This specifies the path for cxxtest output and compiles/runs the tests
-##
-tests: setup ../bin/EntityTests.cpp makeTestEntity ../bin/RobotClassTests.cpp makeTestRobotClass
-	./testEntity
-	./testRobotClass
-
-testEntity: setup ../bin/EntityTests.cpp makeTestEntity
-
-testRobotClass: setup ../bin/RobotClassTests.cpp makeTestRobotClass
-
-CXXDIR = ../bin/cxxtest-4.3
-CXXTEST = $(CXXDIR)/bin/cxxtestgen
-CXXFLAGS = --error-printer --abort-on-fail --have-eh
-
-../bin/EntityTests.cpp: $(GLUI) EntityTests.h
-	$(CXXTEST) $(CXXFLAGS) -o ../bin/EntityTests.cpp EntityTests.h
-
-../bin/RobotClassTests.cpp: $(GLUI) RobotClassTests.h
-	$(CXXTEST) $(CXXFLAGS) -o ../bin/RobotClassTests.cpp RobotClassTests.h
-
-makeTestEntity: $(GLUI) ../bin/Drawing.o ../bin/randf.o ../bin/Clock.o ../bin/Entity/Entity.o ../bin/Entity/RobotClass.o ../bin/Entity/Target.o ../bin/Entity/Obstacle.o ../bin/Entity/EntityManager.o
-	g++ -I$(CXXDIR) -o testEntity ../bin/Drawing.o ../bin/randf.o ../bin/Clock.o ../bin/Entity/Entity.o ../bin/Entity/RobotClass.o ../bin/Entity/Target.o ../bin/Entity/Obstacle.o ../bin/Entity/EntityManager.o ../bin/EntityTests.cpp $(LINK_LIBS)
-
-makeTestRobotClass: $(GLUI) ../bin/Drawing.o ../bin/randf.o ../bin/Clock.o ../bin/Entity/Entity.o ../bin/Entity/RobotClass.o ../bin/Entity/Target.o ../bin/Entity/Obstacle.o ../bin/Entity/EntityManager.o
-	g++ -I$(CXXDIR) -o testRobotClass ../bin/Drawing.o ../bin/randf.o ../bin/Clock.o ../bin/Entity/Entity.o ../bin/Entity/RobotClass.o ../bin/Entity/Target.o ../bin/Entity/Obstacle.o ../bin/Entity/EntityManager.o ../bin/RobotClassTests.cpp $(LINK_LIBS)
-
-
- 
-
-

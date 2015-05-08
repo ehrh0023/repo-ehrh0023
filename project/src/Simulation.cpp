@@ -1,5 +1,4 @@
 #include "Simulation.h"
-#include "Entity/Obstacle.h"
 #include "Entity/Paddle.h"
 #include "Entity/Ball.h"
 #include "Entity/EntityManager.h"
