@@ -7,6 +7,8 @@
 int EntityManager::leftWins = 0;
 int EntityManager::rightWins = 0;
 
+bool EntityManager::gameOver = false;
+
 //Entity Manager is a singleton class
 // Author: Dennis Ehrhardt (all methods in EntityManager)
 EntityManager& EntityManager::getInstance()
@@ -38,10 +40,15 @@ void EntityManager::render()
 			entities[i]->render();
 		}
 	}
+	Drawing::drawRectangle(Rect(0, 100, Drawing::getWindowWidth(), 20), Color(1, 1, 1));
+	Drawing::drawRectangle(Rect(0, Drawing::getWindowHeight() - 80, Drawing::getWindowWidth(), 20), Color(1, 1, 1));
 
-	Vector2f vr((Drawing::getWindowWidth() >> 1) + 20, Drawing::getWindowHeight() - 100);
+	Drawing::drawRectangle(Rect(0, 100, Drawing::getWindowWidth(), 20), Color(1, 1, 1));
+	Drawing::drawRectangle(Rect((Drawing::getWindowWidth() / 2) - 2, Drawing::getWindowHeight() - 100, 4, Drawing::getWindowHeight()-200), Color(1, 1, 1));
+
+	Vector2f vr((Drawing::getWindowWidth() >> 1) + 30, Drawing::getWindowHeight() - 60);
 	Drawing::drawText(vr, std::to_string(rightWins));
-	Vector2f vl((Drawing::getWindowWidth() >> 1) - 40, Drawing::getWindowHeight() - 100);
+	Vector2f vl((Drawing::getWindowWidth() >> 1) - 40, Drawing::getWindowHeight() - 60);
 	Drawing::drawText(vl, std::to_string(leftWins));
 }
 // Add a new entity to the manager

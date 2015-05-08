@@ -5,6 +5,8 @@
 class Ball : public Entity
 {
 public:
+	static bool accelMode;
+
 	Ball(int posX, int posY, int width, int height) :
 		Entity(posX, posY, width, height)
 	{

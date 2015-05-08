@@ -211,16 +211,16 @@ void Entity::collide(Entity* otherEntity)
 
 void Entity::wallCollide()
 {
-	if (body.getBottom() < 0)
+	if (body.getBottom() < 100)
 	{
 		onCollideDown();
-		body.setBottom(0);
+		body.setBottom(100);
 	}
 
-	if (body.getTop() >= Drawing::getWindowHeight())
+	if (body.getTop() >= Drawing::getWindowHeight() - 100)
 	{
 		onCollideUp();
-		body.setTop(Drawing::getWindowHeight() - 1);
+		body.setTop(Drawing::getWindowHeight() - 101);
 	}
 
 

@@ -16,6 +16,7 @@ void pause(int);
 void resume(int);
 void quit(int);
 void spawnEntities();
+
 void changeAccelMode(int);
 void changepLeftAIMode(int);
 void changepRightAIMode(int);
@@ -121,6 +122,11 @@ void Simulation::update()
 	{
 		EntityManager::getInstance().update();
 	}
+	if (EntityManager::gameOver)
+	{
+		spawnEntities();
+		EntityManager::gameOver = false;
+	}
 }
 
 // Author:
@@ -190,17 +196,21 @@ void spawnEntities()
 
 void changeAccelMode(int mode)
 {	
-
+	Ball::accelMode = !Ball::accelMode;
 }
 
 void changepLeftAIMode(int mode)
 {
 	pLeftAI = !pLeftAI;
-	pLeft->setAI(pLeftAI);
+
+	if (pLeft != NULL)
+		pLeft->setAI(pLeftAI);
 }
 
 void changepRightAIMode(int mode)
 {
 	pRightAI = !pRightAI;
-	pRight->setAI(pRightAI);
+
+	if (pRight!=NULL)
+		pRight->setAI(pRightAI);
 }

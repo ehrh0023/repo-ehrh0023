@@ -32,7 +32,29 @@ void Paddle::update()
 
 float Paddle::estimateCollisionPoint()
 {
-	return ball->getPosition().y;
+	float xdist = abs(ball->getBody().getCenter().x - body.getCenter().x);
+
+	float deltaY = Drawing::getWindowHeight() - 200;
+	float deltaX = deltaY; // 45 degree angles are awesome
+
+
+	bool fromTop = ball->getOrientation().y < 0;
+
+	while (xdist > deltaX)
+	{
+		xdist -= deltaX;
+		fromTop != fromTop;
+	}
+
+	float ydist = xdist * ball->getSpeed();
+
+	if (fromTop)
+	{
+		return Drawing::getWindowHeight() - 100 - ydist;
+	}
+	else
+		return 100 + ydist;
+
 }
 
 // Author: Dennis Ehrhardt

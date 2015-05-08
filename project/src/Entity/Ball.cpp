@@ -6,6 +6,8 @@
 
 bool isEntityCol;
 
+bool Ball::accelMode = false;
+
 void Ball::update()
 {
 	translate(velocity);
@@ -24,9 +26,13 @@ void Ball::onCollideLeft()
 	if (!isEntityCol)
 	{
 		EntityManager::rightWins++;
+		EntityManager::gameOver = true;
 	}
 	Entity::onCollideLeft();
 	setOrientation(Vector2f(0.70710678118, orientation.y));
+
+	if (accelMode)
+		speed += 50;
 }
 
 void Ball::onCollideRight()
@@ -34,9 +40,13 @@ void Ball::onCollideRight()
 	if (!isEntityCol)
 	{
 		EntityManager::leftWins++;
+		EntityManager::gameOver = true;
 	}
 	Entity::onCollideRight();
 	setOrientation(Vector2f(-0.70710678118, orientation.y));
+
+	if (accelMode)
+		speed += 50;
 }
 
 void Ball::onCollideDown()

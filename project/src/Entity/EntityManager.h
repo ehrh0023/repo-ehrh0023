@@ -16,6 +16,7 @@ private:
 public:
 	static int leftWins;
 	static int rightWins;
+	static bool gameOver;
 
 	/* Entity Manager is a singleton class */
 	static EntityManager& getInstance();
