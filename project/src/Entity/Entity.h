@@ -1,8 +1,4 @@
-#ifndef ENTITY_H
-#ifndef COLLIDER_H
-#include "../Collider.h"
-#else
-#define ENTITY_H
+#pragma once
 #include "../Rect.h"
 #include "../Vector2.h"
 #include "../Color.h"
@@ -30,7 +26,6 @@ protected:
 	unsigned int entityID;
 	bool setForDeletion;
 	Color rgb;
-	Collider* collider;
 
 public:
 	/*! This constructor requires three parameters: x position, y position, and radius.
@@ -93,6 +88,8 @@ public:
 		*/
 	void setPosition(Vector2f const&);
 
+	Rect getBody();
+
 	/*! Get the orientation of the entity
 		\return The orientation (Vector2)
 		*/
@@ -140,9 +137,9 @@ public:
 		\param otherEntity the other entity
 		\return True if collided, False otherwise
 		*/
-	void collide(Entity* otherEntity);
+	virtual void collide(Entity* otherEntity);
 
-	void wallCollide();
+	virtual void wallCollide();
 
 	/*! Check that the entity is within the bounds of the map if it is not in bounds, it is brought in bounds
 		\return False if out of bounds and brought back, True if originally in bounds
@@ -193,8 +190,3 @@ private:
 	
 	friend class EntityManager;
 };
-
-#include "../Collider.h"
-
-#endif
-#endif

@@ -26,6 +26,7 @@ public:
 	/*! Draw the ball on the screen */
 	void render();
 
+	void collide(Entity* otherEntity);
 	void onCollideLeft();
 	void onCollideRight();
 	void onCollideUp();

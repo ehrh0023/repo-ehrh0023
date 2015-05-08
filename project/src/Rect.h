@@ -12,6 +12,7 @@ public:
 	Rect(Vector2f, float, float);
 	Rect(float, float, float, float);
 
+	Rect(Rect const&);
 	Rect operator=(Rect const&);
 
 	/*!

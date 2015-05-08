@@ -39,8 +39,10 @@ void EntityManager::render()
 		}
 	}
 
-	Vector2f v((Drawing::getWindowWidth() >> 1) + 20, Drawing::getWindowHeight() - 100);
-	Drawing::drawText(v, "Wins - " + rightWins);
+	Vector2f vr((Drawing::getWindowWidth() >> 1) + 20, Drawing::getWindowHeight() - 100);
+	Drawing::drawText(vr, std::to_string(rightWins));
+	Vector2f vl((Drawing::getWindowWidth() >> 1) - 40, Drawing::getWindowHeight() - 100);
+	Drawing::drawText(vl, std::to_string(leftWins));
 }
 // Add a new entity to the manager
 void EntityManager::add(Entity* entity)

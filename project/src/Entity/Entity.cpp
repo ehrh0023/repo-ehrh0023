@@ -4,7 +4,6 @@
 #include <iostream>
 #include "../Drawing.h"
 #include "../Color.h"
-#include "../AABBCollider.h"
 
 const Vector2f stdVect(1, 0);
 
@@ -14,8 +13,7 @@ Entity::Entity(int posX, int posY, int width, int height):
 	body(posX, posY, width, height),
 	setForDeletion(false),
 	orientation(stdVect),
-	rotation(0),
-	collider(new AABBCollider(body, this))
+	rotation(0)
 {
 }
 
@@ -25,8 +23,7 @@ Entity::Entity(Vector2f vectorIn, int width, int height) :
 	body(vectorIn, width, height),
 	setForDeletion(false),
 	orientation(stdVect),
-	rotation(0),
-	collider(new AABBCollider(body, this))
+	rotation(0)
 {
 } 
 
@@ -124,6 +121,11 @@ void Entity::setPosition(Vector2f const& newPosition)
 	body.setCenter(newPosition);
 }
 
+Rect Entity::getBody()
+{
+	return body;
+}
+
 // Author: Andrew Hartfiel
 // Returns orientation Vector2 of entity
 Vector2f Entity::getOrientation() const
@@ -205,12 +207,35 @@ void Entity::setVelocity(Vector2f const& newVelocity)
 // A shared point along the circumference of both entities counts as a collision
 void Entity::collide(Entity* otherEntity)
 {
-	collider->collide(otherEntity->collider);
 }
 
 void Entity::wallCollide()
 {
-	collider->boundsCollide();
+	if (body.getBottom() < 0)
+	{
+		onCollideDown();
+		body.setBottom(0);
+	}
+
+	if (body.getTop() >= Drawing::getWindowHeight())
+	{
+		onCollideUp();
+		body.setTop(Drawing::getWindowHeight() - 1);
+	}
+
+
+	if (body.getLeft() < 0)
+	{
+		onCollideLeft();
+		body.setLeft(0);
+	}
+
+
+	if (body.getRight() >= Drawing::getWindowWidth())
+	{
+		onCollideRight();
+		body.setRight(Drawing::getWindowWidth() - 1);
+	}
 }
 
 // Author: David Tran

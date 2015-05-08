@@ -21,6 +21,20 @@ Rect::Rect(float left, float top, float rectWidth, float rectHeight)
 {
 }
 
+Rect::Rect(Rect const& rect)
+	:position(rect.position),
+	width(rect.width),
+	height(rect.height)
+{
+}
+Rect Rect::operator=(Rect const& rect)
+{
+	position = rect.position;
+	height = rect.height;
+	width = rect.width;
+	return *this;
+}
+
 Vector2f Rect::getTopLeft() const
 {
 	return position;
@@ -71,7 +85,7 @@ void Rect::setWidth(float rectWidth)
 
 Vector2f Rect::getCenter() const
 {
-	return position + Vector2f(width/2, height/2);
+	return position + Vector2f(width/2, -height/2);
 }
 
 Vector2f Rect::setCenter(Vector2f const& center)
@@ -111,16 +125,6 @@ Vector2f Rect::setBottomRight(Vector2f const& bottomRight)
 	position = Vector2f(bottomRight.x - width, bottomRight.y + height);
 	return bottomRight;
 }
-
-
-Rect Rect::operator=(Rect const& other)
-{
-	position = other.position;
-	width = other.width;
-	height = other.height;
-	return *this;
-}
-
 
 float Rect::setTop(float top)
 {

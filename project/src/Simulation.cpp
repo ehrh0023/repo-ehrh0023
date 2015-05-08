@@ -16,6 +16,16 @@ void pause(int);
 void resume(int);
 void quit(int);
 void spawnEntities();
+void changeAccelMode(int);
+void changepLeftAIMode(int);
+void changepRightAIMode(int);
+
+GLUI_Checkbox* accelCheck;
+GLUI_Checkbox* pLeftAICheck;
+GLUI_Checkbox* pRightAICheck;
+
+bool pLeftAI = false;
+bool pRightAI = false;
 
 Simulation::Simulation(int argc, char* argv[], int width, int height) 
 	: BaseGfxApp(argc, argv, width, height, 50, 50, GLUT_RGB|GLUT_DOUBLE|GLUT_DEPTH, true, 851, 50)
@@ -28,6 +38,14 @@ Simulation::Simulation(int argc, char* argv[], int width, int height)
     new GLUI_Button(m_glui, "Start", UI_START, (GLUI_Update_CB)start);
     new GLUI_Button(m_glui, "Pause", UI_PAUSE, (GLUI_Update_CB)pause);
     new GLUI_Button(m_glui, "Resume", UI_RESUME, (GLUI_Update_CB)resume);
+
+	GLUI_Panel *behaviorPanel = new GLUI_Panel(m_glui, "Game Options");
+	accelCheck = new GLUI_Checkbox(behaviorPanel, "Acceleration mode", NULL, -1, changeAccelMode);
+	accelCheck->set_int_val(0);
+	pLeftAICheck = new GLUI_Checkbox(behaviorPanel, "Left Player AI", NULL, -1, changepLeftAIMode);
+	pLeftAICheck->set_int_val(0);
+	pRightAICheck = new GLUI_Checkbox(behaviorPanel, "Right Player AI", NULL, -1, changepRightAIMode);
+	pRightAICheck->set_int_val(0);
 
 
     // Initialize OpenGL
@@ -125,9 +143,28 @@ void resume(int i)
 	paused = false;
 }
 
+Paddle* pLeft;
+Paddle* pRight;
+
+
 void spawnEntities()
 {
-	Ball* ball = new Ball(Drawing::getWindowWidth() >> 1, Drawing::getWindowHeight() >> 1, 20, 20);
+	EntityManager::getInstance().clear();
+
+	Ball* ball = new Ball(Drawing::getWindowWidth() >> 1, rand() % Drawing::getWindowHeight(), 20, 20);
+	int chance = rand() & 3;
+	switch (chance)
+	{
+	case 0:
+		ball->rotate(90);
+		break;
+	case 1:
+		ball->rotate(180);
+		break;
+	case 2:
+		ball->rotate(-90);
+		break;
+	}
 	EntityManager::getInstance().add(ball);
 	ball->setSpeed(300);
 	ball->setColor(Color(1, 1, 1));
@@ -137,10 +174,33 @@ void spawnEntities()
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(200);
 	paddle->setColor(Color(1, 1, 1));
+	paddle->setBall(ball);
+	pLeft = paddle;
+	pLeft->setAI(pLeftAI);
 
 	Controls controls2('i', 'k');
 	paddle = new Paddle(Drawing::getWindowWidth() - 60, Drawing::getWindowHeight() >> 1, 20, 120, controls2);
 	EntityManager::getInstance().add(paddle);
 	paddle->setSpeed(200);
 	paddle->setColor(Color(1, 1, 1));
+	paddle->setBall(ball);
+	pRight = paddle;
+	pRight->setAI(pRightAI);
+}
+
+void changeAccelMode(int mode)
+{	
+
+}
+
+void changepLeftAIMode(int mode)
+{
+	pLeftAI = !pLeftAI;
+	pLeft->setAI(pLeftAI);
+}
+
+void changepRightAIMode(int mode)
+{
+	pRightAI = !pRightAI;
+	pRight->setAI(pRightAI);
 }

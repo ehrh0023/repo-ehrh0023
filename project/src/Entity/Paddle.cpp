@@ -7,19 +7,48 @@
 // Author: Dennis Ehrhardt
 void Paddle::update()
 {
-	System::Keyboard keyboard = System::Keyboard::getInstance();
-	if (keyboard.keyHeld(controls.up))
+	if (!isAI)
 	{
-		translate(Vector2f(0, 1) * speed * Clock::getInstance().getDeltaTime());
+		System::Keyboard keyboard = System::Keyboard::getInstance();
+		if (keyboard.keyHeld(controls.up))
+		{
+			translate(Vector2f(0, 1) * speed * Clock::getInstance().getDeltaTime());
+		}
+		if (keyboard.keyHeld(controls.down))
+		{
+			translate(Vector2f(0, -1) * speed * Clock::getInstance().getDeltaTime());
+		}
 	}
-	if (keyboard.keyHeld(controls.down))
+	else if (ball != NULL)
 	{
-		translate(Vector2f(0, -1) * speed * Clock::getInstance().getDeltaTime());
+		float y = estimateCollisionPoint();
+		if (y > getPosition().y)	
+			translate(Vector2f(0, 1) * speed * Clock::getInstance().getDeltaTime());
+		if (y < getPosition().y)
+			translate(Vector2f(0, -1) * speed * Clock::getInstance().getDeltaTime());
+
 	}
+}
+
+float Paddle::estimateCollisionPoint()
+{
+	return ball->getPosition().y;
 }
 
 // Author: Dennis Ehrhardt
 void Paddle::render()
 {
 	Entity::render();
+}
+
+
+void Paddle::setBall(Ball* ball)
+{
+	this->ball = ball;
+}
+
+
+void Paddle::setAI(bool on)
+{
+	isAI = on;
 }

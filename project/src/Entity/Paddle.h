@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "Ball.h"
 #include "../Controls.h"
 
 /*! 
@@ -11,9 +12,8 @@ class Paddle : public Entity
 	Vector2f wanderTarget;
 	Controls controls;
 
-	const float wanderRadius;
-	const float wanderDistance;
-	const float wanderJitter;
+	bool isAI;
+	Ball* ball;
 
 public:
 	/*! This constructor requires three parameters: x position, y position, and radius.
@@ -23,10 +23,9 @@ public:
 	*/
 	Paddle(int posX, int posY, int width, int height, Controls cntl) :
 		Entity(posX, posY, width, height),
-		wanderRadius(50),
-		wanderDistance(0),
-		wanderJitter(1),
-		controls(cntl)
+		controls(cntl),
+		isAI(false),
+		ball(NULL)
 	{
 		rgb = Color(1.0f,1.0f,0.0f);
 	}
@@ -37,10 +36,9 @@ public:
 	*/
 	Paddle(Vector2f position, int width, int height, Controls cntl) :
 		Entity(position, width, height), 
-		wanderRadius(50),
-		wanderDistance(0),
-		wanderJitter(1),
-		controls(cntl)
+		controls(cntl),
+		isAI(false),
+		ball(NULL)
 	{
 		rgb = Color(1.0f,1.0f,0.0f);
 	}
@@ -50,4 +48,10 @@ public:
 
 	/*! Draw the Paddle on the screen */
 	void render();
+
+	void setBall(Ball*);
+	void setAI(bool);
+
+private:
+	float estimateCollisionPoint();
 };
