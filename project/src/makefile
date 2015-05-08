@@ -12,14 +12,14 @@ CPPEXTFILES += main.cpp
 CPPEXTFILES += BaseGfxApp.cpp
 CPPEXTFILES += Simulation.cpp
 CPPEXTFILES += Drawing.cpp
+CPPEXTFILES += Keyboard.cpp
 CPPEXTFILES += Color.cpp
 CPPEXTFILES += Clock.cpp
 CPPEXTFILES += randf.cpp
 CPPEXTFILES += Entity/EntityManager.cpp 
 CPPEXTFILES += Entity/Entity.cpp
-CPPEXTFILES += Entity/RobotClass.cpp
-CPPEXTFILES += Entity/Target.cpp
-CPPEXTFILES += Entity/Obstacle.cpp
+CPPEXTFILES += Entity/Ball.cpp
+CPPEXTFILES += Entity/Paddle.cpp
 
 ##
 # Lists all the cpp files in /src
