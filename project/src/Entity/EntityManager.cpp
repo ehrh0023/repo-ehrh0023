@@ -1,6 +1,7 @@
 #include "EntityManager.h"
 #include <cstddef>
 #include <iostream>
+#include <sstream>
 
 
 int EntityManager::leftWins = 0;
@@ -50,10 +51,16 @@ void EntityManager::render()
 	r = Rect((Drawing::getWindowWidth() / 2) - 2, Drawing::getWindowHeight() - 100, 4, Drawing::getWindowHeight()-200);
 	Drawing::drawRectangle(r, Color(1, 1, 1));
 
+	std::ostringstream s;
+	s.clear();
+	s << rightWins;
 	Vector2f vr((Drawing::getWindowWidth() >> 1) + 30, Drawing::getWindowHeight() - 60);
-	Drawing::drawText(vr, std::to_string(rightWins));
+	Drawing::drawText(vr, s.str());
+
+	s.str(std::string());
+	s << leftWins;
 	Vector2f vl((Drawing::getWindowWidth() >> 1) - 40, Drawing::getWindowHeight() - 60);
-	Drawing::drawText(vl, std::to_string(leftWins));
+	Drawing::drawText(vl, s.str());
 }
 // Add a new entity to the manager
 void EntityManager::add(Entity* entity)
