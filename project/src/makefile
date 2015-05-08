@@ -16,6 +16,7 @@ CPPEXTFILES += Keyboard.cpp
 CPPEXTFILES += Color.cpp
 CPPEXTFILES += Clock.cpp
 CPPEXTFILES += randf.cpp
+CPPEXTFILES += Rect.cpp
 CPPEXTFILES += Entity/EntityManager.cpp 
 CPPEXTFILES += Entity/Entity.cpp
 CPPEXTFILES += Entity/Ball.cpp
