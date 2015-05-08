@@ -1,5 +1,4 @@
 #include "EntityManager.h"
-#include "Obstacle.h"
 #include <cstddef>
 #include <iostream>
 
@@ -40,11 +39,16 @@ void EntityManager::render()
 			entities[i]->render();
 		}
 	}
-	Drawing::drawRectangle(Rect(0, 100, Drawing::getWindowWidth(), 20), Color(1, 1, 1));
-	Drawing::drawRectangle(Rect(0, Drawing::getWindowHeight() - 80, Drawing::getWindowWidth(), 20), Color(1, 1, 1));
+	
+	Rect r(0, 100, Drawing::getWindowWidth(), 20);
+	Drawing::drawRectangle(r, Color(1, 1, 1));
+	r = Rect(0, Drawing::getWindowHeight() - 80, Drawing::getWindowWidth(), 20);
+	Drawing::drawRectangle(r, Color(1, 1, 1));
 
-	Drawing::drawRectangle(Rect(0, 100, Drawing::getWindowWidth(), 20), Color(1, 1, 1));
-	Drawing::drawRectangle(Rect((Drawing::getWindowWidth() / 2) - 2, Drawing::getWindowHeight() - 100, 4, Drawing::getWindowHeight()-200), Color(1, 1, 1));
+	r = Rect(0, 100, Drawing::getWindowWidth(), 20);
+	Drawing::drawRectangle(r, Color(1, 1, 1));
+	r = Rect((Drawing::getWindowWidth() / 2) - 2, Drawing::getWindowHeight() - 100, 4, Drawing::getWindowHeight()-200);
+	Drawing::drawRectangle(r, Color(1, 1, 1));
 
 	Vector2f vr((Drawing::getWindowWidth() >> 1) + 30, Drawing::getWindowHeight() - 60);
 	Drawing::drawText(vr, std::to_string(rightWins));
